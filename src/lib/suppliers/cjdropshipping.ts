@@ -99,10 +99,16 @@ export const cjdropshipping: SupplierAdapter = {
     address: ShippingAddress,
     lines: SupplierOrderLine[],
   ): Promise<PlacedSupplierOrder> {
+    // createOrderV2 exige el nombre del país además del código ISO
+    const COUNTRY_NAMES: Record<string, string> = {
+      NL: "Netherlands", BE: "Belgium", DE: "Germany", FR: "France", ES: "Spain",
+      IT: "Italy", PT: "Portugal", AT: "Austria", PL: "Poland", LU: "Luxembourg", IE: "Ireland",
+    };
     const created = await cjFetch<{ orderId: string }>(`/shopping/order/createOrderV2`, {
       method: "POST",
       body: JSON.stringify({
         orderNumber: reference,
+        shippingCountry: COUNTRY_NAMES[address.countryCode] ?? address.countryCode,
         shippingCountryCode: address.countryCode,
         shippingProvince: "",
         shippingCity: address.city,
