@@ -4,6 +4,14 @@ _Última actualización: 2026-07-11_
 
 ## Estado global
 
+**Fase 2 (producción) — DESPLEGADA (2026-07-11).** Live en https://tulsi-store-lpnb.vercel.app
+(proyecto Vercel `tulsi-store-lpnb`, cuenta djrock3108-9888). Dominios tulsi.store y
+www.tulsi.store vinculados al proyecto; falta solo el cambio DNS en Vimexx (ver DEPLOYMENT.md).
+Env configuradas: ADMIN_USER/ADMIN_PASSWORD (ver ADMIN_CREDENTIALS.local.txt, solo local),
+CRON_SECRET, NEXT_PUBLIC_SITE_URL. Crons en plan Hobby = diarios (06:00 y 06:30 UTC).
+Nota: la integración Git del proyecto Vercel no dispara builds (proyecto creado desde repo
+vacío); los deploys se hacen con `npx vercel deploy --prod` desde esta carpeta.
+
 **Fase 1 (fundación completa) — TERMINADA y verificada.** `npm run build` compila sin errores;
 la tienda, el pipeline de pedidos, el panel admin, el SEO y la seguridad están implementados.
 Lo único que falta para operar en producción son **credenciales externas** (sección "Bloqueado por el propietario").

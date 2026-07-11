@@ -42,3 +42,7 @@ next-env.d.ts
 
 # Prisma generated client
 /src/generated/
+
+.vercel
+.env*
+ADMIN_CREDENTIALS.local.txt

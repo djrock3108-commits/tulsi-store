@@ -1,6 +1,7 @@
 {
+  "framework": "nextjs",
   "crons": [
-    { "path": "/api/cron/sync-suppliers", "schedule": "0 * * * *" },
-    { "path": "/api/cron/sync-tracking", "schedule": "30 */2 * * *" }
+    { "path": "/api/cron/sync-suppliers", "schedule": "0 6 * * *" },
+    { "path": "/api/cron/sync-tracking", "schedule": "30 6 * * *" }
   ]
 }
