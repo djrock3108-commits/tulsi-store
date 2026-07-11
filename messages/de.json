@@ -1,0 +1,46 @@
+{
+  "nav": { "shop": "Shop", "cart": "Warenkorb" },
+  "hero": {
+    "eyebrow": "Premium-Technologie für jeden Tag",
+    "title": "Entworfen, um Teil deines Lebens zu werden.",
+    "subtitle": "Sorgfältig ausgewählte Technologie für dein Zuhause, deine Reisen und alles dazwischen. Europäischer Versand, durchdachtes Design, kein Lärm.",
+    "cta": "Kollektion entdecken"
+  },
+  "home": {
+    "featured": "Die Kollektion",
+    "categories": "Nach Kategorie stöbern",
+    "promiseTitle": "Weniger, aber besser.",
+    "promiseBody": "Jedes Produkt bei Tulsi besteht einen Test: Würden wir es selbst auf unserem Schreibtisch, in unserem Zuhause, in unserer Tasche behalten? Wenn nicht, verkaufen wir es nicht.",
+    "shipping": "Kostenloser EU-Versand",
+    "shippingBody": "Bei jeder Bestellung, ohne Mindestwert.",
+    "warranty": "2 Jahre Garantie",
+    "warrantyBody": "Europäischer Verbraucherschutz, ohne Reibung.",
+    "returns": "30 Tage Rückgabe",
+    "returnsBody": "Meinung geändert? Schick es zurück."
+  },
+  "product": {
+    "addToCart": "In den Warenkorb",
+    "added": "Hinzugefügt",
+    "inStock": "Auf Lager",
+    "outOfStock": "Ausverkauft",
+    "freeShipping": "Kostenloser Versand · Versand innerhalb von 24h",
+    "backToShop": "Zurück zum Shop"
+  },
+  "cart": {
+    "title": "Dein Warenkorb",
+    "empty": "Dein Warenkorb ist leer.",
+    "continue": "Weiter einkaufen",
+    "checkout": "Zur Kasse",
+    "subtotal": "Zwischensumme",
+    "remove": "Entfernen",
+    "note": "Versand und Steuern werden an der Kasse berechnet. Wir akzeptieren Karten, Apple Pay, Google Pay, iDEAL, Bancontact und PayPal."
+  },
+  "order": {
+    "successTitle": "Danke.",
+    "successBody": "Deine Bestellung ist bestätigt. Eine Bestätigungs-E-Mail ist unterwegs, und wir senden dir die Sendungsverfolgung, sobald dein Paket verschickt wird."
+  },
+  "footer": {
+    "tagline": "Premium-Technologie für jeden Tag, versandt in ganz Europa.",
+    "rights": "Alle Rechte vorbehalten."
+  }
+}

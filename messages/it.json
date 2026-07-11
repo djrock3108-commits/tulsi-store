@@ -1,0 +1,46 @@
+{
+  "nav": { "shop": "Negozio", "cart": "Carrello" },
+  "hero": {
+    "eyebrow": "Tecnologia premium per ogni giorno",
+    "title": "Progettata per fondersi nella tua vita.",
+    "subtitle": "Tecnologia selezionata con cura per la tua casa, i tuoi viaggi e tutto il resto. Spedizione europea, design ragionato, senza rumore.",
+    "cta": "Esplora la collezione"
+  },
+  "home": {
+    "featured": "La collezione",
+    "categories": "Sfoglia per categoria",
+    "promiseTitle": "Meno, ma meglio.",
+    "promiseBody": "Ogni prodotto Tulsi supera un test: lo terremmo sulla nostra scrivania, in casa nostra, nella nostra borsa? Se no, non lo vendiamo.",
+    "shipping": "Spedizione UE gratuita",
+    "shippingBody": "Su ogni ordine, senza minimo.",
+    "warranty": "Garanzia di 2 anni",
+    "warrantyBody": "Tutela europea del consumatore, senza attriti.",
+    "returns": "Resi entro 30 giorni",
+    "returnsBody": "Hai cambiato idea? Rispediscilo."
+  },
+  "product": {
+    "addToCart": "Aggiungi al carrello",
+    "added": "Aggiunto al carrello",
+    "inStock": "Disponibile",
+    "outOfStock": "Esaurito",
+    "freeShipping": "Spedizione gratuita · Spedito entro 24h",
+    "backToShop": "Torna al negozio"
+  },
+  "cart": {
+    "title": "Il tuo carrello",
+    "empty": "Il tuo carrello è vuoto.",
+    "continue": "Continua lo shopping",
+    "checkout": "Procedi all'acquisto",
+    "subtotal": "Subtotale",
+    "remove": "Rimuovi",
+    "note": "Spedizione e tasse calcolate al pagamento. Accettiamo carte, Apple Pay, Google Pay, iDEAL, Bancontact e PayPal."
+  },
+  "order": {
+    "successTitle": "Grazie.",
+    "successBody": "Il tuo ordine è confermato. Un'e-mail di conferma è in arrivo e ti invieremo il tracking non appena il pacco parte."
+  },
+  "footer": {
+    "tagline": "Tecnologia premium per ogni giorno, spedita in tutta Europa.",
+    "rights": "Tutti i diritti riservati."
+  }
+}
