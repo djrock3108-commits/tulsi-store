@@ -4,6 +4,15 @@ _Última actualización: 2026-07-11_
 
 ## Estado global
 
+**Fase 3 (catálogo real) — IMPORTADO Y EN PRODUCCIÓN (2026-07-11 tarde).** 6 productos
+verificados de CJdropshipping en vivo con fotos oficiales, PIDs/VIDs reales y precios
+definitivos; proveedor único: CJ (BigBuy descartado por el propietario). Lámpara smart
+eliminada (sin candidato Tuya/Alexa en CJ). Robot aspirador PENDIENTE de decisión de
+precio (ver PRODUCT_SELECTION_REPORT.md, addendum). `supplierProductId` = VID de variante
+CJ; adaptador corregido (stock vía queryByVid). Credenciales CJ en Vercel; sync diario activo.
+Alertas de stock: aspirador coche 10 uds (FR), mochila 24 uds (DE) — el cron los vigila.
+
+
 **Fase 2 (producción) — DESPLEGADA (2026-07-11).** Live en https://tulsi-store-lpnb.vercel.app
 (proyecto Vercel `tulsi-store-lpnb`, cuenta djrock3108-9888). Dominios tulsi.store y
 www.tulsi.store vinculados al proyecto; falta solo el cambio DNS en Vimexx (ver DEPLOYMENT.md).

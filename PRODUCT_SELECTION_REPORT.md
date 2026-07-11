@@ -1,5 +1,38 @@
 # PRODUCT_SELECTION_REPORT — Tulsi.store
 
+## ✅ ADDENDUM — Verificación de calidad e importación (2026-07-11, tarde)
+
+Por orden del propietario se verificó la ficha completa de cada finalista antes de importar.
+Resultado (datos en `data/cj-verification.json`):
+
+| Producto | Veredicto de ficha | Acción |
+|---|---|---|
+| Fuente mascotas | ✅ **Excelente**: SUS 304 confirmado, filtración 4 capas + 2 recambios, 3,2 L, ventana LED, apta lavavajillas | **IMPORTADA** — PVP €49,95 |
+| Aspirador coche | ✅ **Excelente**: 16.000 Pa brushless confirmado, 7 boquillas, 4 modos, mención UL, almacén FR | **IMPORTADO** — PVP €44,95 (⚠ 10 uds FR, vigilar reposición) |
+| Pistola masaje (A) | ✅ **Buena**: 6 niveles + 7 cabezales (uno térmico) confirmados, 28 W, 1200 mAh | **IMPORTADA** (variante Black) — PVP €59,95. Finalista B descartado: motor con escobillas, gama baja |
+| Power bank | ✅ Correcta: 10.000 mAh + magnético + inalámbrica + carga rápida confirmados | **IMPORTADO** (variante Silver 10000) — PVP €44,95 |
+| Mochila (ganadora original) | 🔴 **RECHAZADA**: la ficha solo confirma "impermeable y ligera" — sin ningún rasgo antirrobo | Sustituida |
+| Mochila (nueva, 2ª pasada) | ✅ **Buena**: 22L→26L roll-top, funda acolchada 15,6", impermeable, costuras reforzadas, **almacén ALEMANIA** | **IMPORTADA** (pid 2070126026522157058) — PVP €49,95 (⚠ 24 uds DE) |
+| Proyector "creíble" ($44,78) | 🔴 **RECHAZADO**: la ficha declara honestamente **720p nativo** — incumple el criterio | Descartado |
+| Proyector $34 | ✅ Confirmado **1080p nativo (1920×1080)** + Android 11, variante enchufe EU. Nota honesta: 150 lúmenes — proyector de noche/pared, no sustituye a un TV | **IMPORTADO** (variante Android 11 EU) — PVP €129 |
+| Lámpara smart (2ª pasada Tuya/Alexa) | 🔴 **Sin candidato**: 6 búsquedas Tuya/Smart Life/Alexa/Google → 0 productos válidos | **CATEGORÍA ELIMINADA** según directiva — catálogo de 7 premium (6 vivos + robot pendiente) |
+| Robot (ganador $147) | 🔴 **RECHAZADO**: descripción vacía ("Not available for sale on Amazon") — invendible a €329,95 sin specs | Ver decisión pendiente ↓ |
+| Robot L21m PLUS ($278) | ✅ **Excelente**: LiDAR + 6.000 Pa + fregado + autovaciado 3L + app confirmados; premio "Best Product" Channel Summit EMEA 2025 | ⏸ **Coste entregado ~$450 (≈€414)** — no cabe en PVP €329,95 |
+
+### 🔴 Decisión pendiente del propietario — Robot aspirador
+
+El único robot que supera el listón de calidad (L21m PLUS) cuesta ~€414 entregado. Opciones:
+- **A. PVP €549-599** con el L21m PLUS (margen €135-185; posicionamiento coherente con el premio EMEA)
+- **B. Robot intermedio** verificado a medias: "Wet&Dry 4-in-1" ($101 + $65 envío ≈ €152 entregado; navegación láser y fregado confirmados, Pa sin especificar) — cabe en €329,95 con margen ~€178
+- **C. Posponer el robot** hasta que CJ tenga stock EU de un modelo premium (recomendada si la marca manda)
+
+La tienda quedó **desplegada en producción con los 6 verificados**, fotos oficiales del CDN de CJ,
+precios nuevos y sincronización automática CJ activada (credenciales en Vercel, cron diario).
+
+---
+
+## Informe original (mañana del 2026-07-11)
+
 _Generado: 2026-07-11 · Fuente: **API oficial CJdropshipping** (datos reales de catálogo, stock y tarifas de envío) · BigBuy descartado por decisión del propietario_
 
 **Estado: PENDIENTE DE APROBACIÓN DEL PROPIETARIO. Nada importado, nada sincronizado, nada publicado.**

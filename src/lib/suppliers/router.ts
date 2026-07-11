@@ -151,12 +151,15 @@ export async function syncCatalog(): Promise<{ synced: number; skipped: number }
     try {
       const [remote] = await adapter.fetchProducts([product.supplierProductId]);
       if (remote) {
+        // Las imágenes curadas (CDN del proveedor) solo se sustituyen si el
+        // producto aún no tiene imágenes remotas — el sync no degrada el set.
+        const hasCuratedImages = product.images.some((i) => i.startsWith("https://"));
         await prisma.product.update({
           where: { id: product.id },
           data: {
             stock: remote.stock,
             costCents: remote.costCents || product.costCents,
-            images: remote.images.length ? remote.images : product.images,
+            images: hasCuratedImages ? product.images : remote.images.length ? remote.images : product.images,
           },
         });
         synced++;

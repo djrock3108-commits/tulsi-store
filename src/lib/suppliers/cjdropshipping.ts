@@ -61,25 +61,29 @@ export const cjdropshipping: SupplierAdapter = {
     return Boolean(process.env.CJ_EMAIL && process.env.CJ_API_KEY);
   },
 
+  // supplierProductId es el VID de variante CJ — el identificador que aceptan
+  // createOrderV2, stock/queryByVid y variant/queryByVid (queryByPid no existe
+  // en API 2.0; verificado empíricamente el 2026-07-11).
   async fetchProducts(supplierProductIds: string[]): Promise<SupplierProduct[]> {
     const out: SupplierProduct[] = [];
-    for (const pid of supplierProductIds) {
-      const p = await cjFetch<{
-        pid: string;
-        productNameEn?: string;
-        sellPrice?: string | number;
-        productImage?: string;
-        productImageSet?: string[];
-      }>(`/product/query?pid=${encodeURIComponent(pid)}`);
-      const stocks = await cjFetch<{ storageNum?: number }[]>(
-        `/product/stock/queryByPid?pid=${encodeURIComponent(pid)}`,
-      );
+    for (const vid of supplierProductIds) {
+      const v = await cjFetch<{
+        vid: string;
+        variantNameEn?: string;
+        variantSellPrice?: string | number;
+        variantImage?: string;
+      }>(`/product/variant/queryByVid?vid=${encodeURIComponent(vid)}`);
+      const stocks = await cjFetch<
+        { totalInventoryNum?: number; storageNum?: number; countryCode?: string }[]
+      >(`/product/stock/queryByVid?vid=${encodeURIComponent(vid)}`);
       out.push({
-        supplierProductId: pid,
-        name: p.productNameEn ?? "",
-        costCents: Math.round(Number(p.sellPrice ?? 0) * 100),
-        stock: stocks?.reduce((s, x) => s + (x.storageNum ?? 0), 0) ?? 0,
-        images: p.productImageSet ?? (p.productImage ? [p.productImage] : []),
+        supplierProductId: vid,
+        name: v.variantNameEn ?? "",
+        costCents: Math.round(Number(v.variantSellPrice ?? 0) * 100),
+        stock: Array.isArray(stocks)
+          ? stocks.reduce((s, x) => s + Number(x.totalInventoryNum ?? x.storageNum ?? 0), 0)
+          : 0,
+        images: v.variantImage ? [v.variantImage] : [],
       });
     }
     return out;

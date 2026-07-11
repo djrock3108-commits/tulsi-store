@@ -1,11 +1,15 @@
 import type { Locale } from "@/i18n/routing";
 
 /**
- * Launch catalog — the 8 initial products and 7 categories.
- * This is the single source of truth for `prisma/seed.ts` and the fallback
- * catalog served when DATABASE_URL is not configured (local development).
- * Real stock, cost and images are overwritten by the supplier sync
- * (/api/cron/sync-suppliers) once BigBuy / CJ API keys are configured.
+ * Catálogo de lanzamiento — 6 productos VERIFICADOS del catálogo real de
+ * CJdropshipping (2026-07-11, ver PRODUCT_SELECTION_REPORT.md y
+ * data/cj-verification.json). `supplierProductId` es el VID de variante CJ:
+ * es el identificador que usan createOrderV2 (pedidos) y stock/queryByVid
+ * (sincronización). Las imágenes son las oficiales del proveedor (CDN CJ).
+ *
+ * Retirados tras verificación: lámpara smart (sin candidato Tuya/Alexa con
+ * envío UE en CJ) y robot aspirador (pendiente de decisión de precio del
+ * propietario — ver informe).
  */
 
 export type SupplierCode = "BIGBUY" | "CJDROPSHIPPING";
@@ -26,11 +30,11 @@ export interface SeedProduct {
   slug: string;
   sku: string;
   supplier: SupplierCode;
-  supplierProductId: string; // placeholder until mapped to the live supplier catalog
+  supplierProductId: string; // CJ variant VID
   categorySlug: string;
   priceCents: number;
   compareAtCents?: number;
-  costCents: number;
+  costCents: number; // coste CJ aprox. en céntimos EUR (se refresca por sync)
   stock: number;
   images: string[];
   i18n: Partial<Record<Locale, SeedProductI18n>> & { en: SeedProductI18n };
@@ -43,133 +47,135 @@ export const SEED_CATEGORIES: SeedCategory[] = [
   { slug: "mobile-accessories", sortOrder: 4, names: { en: "Mobile Accessories", es: "Accesorios Móvil", nl: "Mobiele Accessoires", de: "Handy-Zubehör", fr: "Accessoires Mobiles", it: "Accessori Mobile" } },
   { slug: "health-wellness", sortOrder: 5, names: { en: "Health & Wellness", es: "Salud y Bienestar", nl: "Gezondheid & Welzijn", de: "Gesundheit & Wellness", fr: "Santé & Bien-être", it: "Salute e Benessere" } },
   { slug: "travel", sortOrder: 6, names: { en: "Travel", es: "Viaje", nl: "Reizen", de: "Reisen", fr: "Voyage", it: "Viaggio" } },
-  { slug: "lighting", sortOrder: 7, names: { en: "Lighting", es: "Iluminación", nl: "Verlichting", de: "Beleuchtung", fr: "Éclairage", it: "Illuminazione" } },
 ];
 
 export const SEED_PRODUCTS: SeedProduct[] = [
   {
+    // CJ pid 2075157496968089602 · CJ SKU CJDT2977063 · verificado: SUS304,
+    // 3.2L, filtración 4 capas + 2 filtros de recambio, silenciosa, ventana LED
     slug: "smart-pet-fountain",
     sku: "TLS-PET-001",
     supplier: "CJDROPSHIPPING",
-    supplierProductId: "CJ-PENDING-MAP",
+    supplierProductId: "2075157497051975681",
     categorySlug: "pet-care",
-    priceCents: 3995,
-    compareAtCents: 4995,
-    costCents: 1420,
-    stock: 120,
-    images: ["/products/smart-pet-fountain.svg"],
+    priceCents: 4995,
+    compareAtCents: 5995,
+    costCents: 1400,
+    stock: 14772,
+    images: [
+      "https://cf.cjdropshipping.com/d9127d71-7bf2-4eff-8a66-217c3dd25c29.png",
+      "https://cf.cjdropshipping.com/eb773499-08ce-4637-bf09-ac8c14c02793.png",
+      "https://cf.cjdropshipping.com/2ac4be44-a11a-4e90-83c1-49402a39d51f.png",
+    ],
     i18n: {
-      en: { name: "Aqua Pet Fountain", tagline: "Fresh, filtered water. Always flowing.", description: "A whisper-quiet smart fountain that keeps your pet hydrated with continuously filtered water. Triple filtration, 2.5L capacity and an ultra-low-power pump designed to run around the clock." },
-      es: { name: "Fuente Inteligente Aqua", tagline: "Agua fresca y filtrada. Siempre en movimiento.", description: "Una fuente inteligente silenciosa que mantiene a tu mascota hidratada con agua filtrada continuamente. Triple filtración, 2,5 L de capacidad y una bomba de bajo consumo diseñada para funcionar sin descanso." },
+      en: { name: "Aqua Pet Fountain", tagline: "Fresh, filtered water. Always flowing.", description: "A whisper-quiet 3.2L fountain in food-grade SUS 304 stainless steel. Four-layer filtration with activated carbon keeps water clean and odour-free — two replacement filters included. An illuminated water-level window tells you when to refill, and the whole bowl is dishwasher safe." },
+      es: { name: "Fuente Aqua para Mascotas", tagline: "Agua fresca y filtrada. Siempre en movimiento.", description: "Fuente silenciosa de 3,2 L en acero inoxidable SUS 304 de grado alimentario. Filtración de cuatro capas con carbón activado que mantiene el agua limpia y sin olores — incluye dos filtros de recambio. Ventana de nivel iluminada para saber cuándo rellenar, y apta para lavavajillas." },
     },
   },
   {
-    slug: "robot-vacuum",
-    sku: "TLS-HOME-001",
-    supplier: "BIGBUY",
-    supplierProductId: "BB-PENDING-MAP",
-    categorySlug: "smart-home",
-    priceCents: 19900,
-    compareAtCents: 24900,
-    costCents: 11200,
-    stock: 45,
-    images: ["/products/robot-vacuum.svg"],
-    i18n: {
-      en: { name: "Orbit Robot Vacuum", tagline: "Your floors, handled.", description: "Laser-guided navigation, 2700 Pa suction and self-docking charging. Orbit maps your home and cleans on your schedule — hard floors, carpet and everything between." },
-      es: { name: "Robot Aspirador Orbit", tagline: "Tus suelos, resueltos.", description: "Navegación láser, 2700 Pa de succión y carga automática. Orbit mapea tu hogar y limpia según tu horario: suelos duros, alfombras y todo lo demás." },
-    },
-  },
-  {
+    // CJ pid 2064224453881335810 · CJ SKU CJFU2927338 · verificado: 16000 Pa,
+    // motor brushless, 3 niveles, 7 boquillas, 4 modos · ALMACÉN FRANCIA (GLS 4-8d)
     slug: "car-handheld-vacuum",
     sku: "TLS-CAR-001",
     supplier: "CJDROPSHIPPING",
-    supplierProductId: "CJ-PENDING-MAP",
+    supplierProductId: "2064224454011359234",
     categorySlug: "car-accessories",
-    priceCents: 3495,
-    costCents: 1180,
-    stock: 200,
-    images: ["/products/car-handheld-vacuum.svg"],
+    priceCents: 4495,
+    compareAtCents: 5495,
+    costCents: 1670,
+    stock: 10,
+    images: [
+      "https://cf.cjdropshipping.com/06a313a6-439a-4c5b-b5eb-251023d2a8a6.png",
+      "https://cf.cjdropshipping.com/a7b1c1f4-c7cf-46ce-a1f1-155f073f52ba.png",
+      "https://cf.cjdropshipping.com/eddfa88c-00ed-48c1-ae58-e8f37dffa038.png",
+    ],
     i18n: {
-      en: { name: "Dash Handheld Vacuum", tagline: "Detail-clean, anywhere.", description: "A cordless 120W handheld vacuum small enough for the glovebox. USB-C fast charging, washable HEPA filter and three precision nozzles for seams, seats and vents." },
-      es: { name: "Aspirador de Mano Dash", tagline: "Limpieza de detalle, en cualquier lugar.", description: "Aspirador de mano inalámbrico de 120 W que cabe en la guantera. Carga rápida USB-C, filtro HEPA lavable y tres boquillas de precisión para juntas, asientos y rejillas." },
+      en: { name: "Dash Handheld Vacuum", tagline: "16,000 Pa of detail-clean, anywhere.", description: "A brushless 16,000 Pa handheld vacuum with a straight air-duct design that cuts air resistance by 80%. Four modes in one tool — vacuum, blower, air pump and vacuum-bag extraction — with seven precision nozzles and three suction levels. Ships from our EU warehouse." },
+      es: { name: "Aspirador de Mano Dash", tagline: "16.000 Pa de limpieza de detalle, en cualquier lugar.", description: "Aspirador de mano brushless de 16.000 Pa con conducto de aire recto que reduce la resistencia un 80%. Cuatro modos en una herramienta — aspirado, soplado, inflado y extracción de bolsas de vacío — con siete boquillas de precisión y tres niveles de succión. Envío desde almacén europeo." },
     },
   },
   {
+    // CJ pid 2607020907151614100 · CJ SKU CJJT2964609 · verificado: 6 niveles,
+    // 7 cabezales (incl. térmico), 1200 mAh, 28 W, formato mini · variante Black
     slug: "massage-gun",
     sku: "TLS-WELL-001",
-    supplier: "BIGBUY",
-    supplierProductId: "BB-PENDING-MAP",
+    supplier: "CJDROPSHIPPING",
+    supplierProductId: "2607020907151615600",
     categorySlug: "health-wellness",
     priceCents: 5995,
     compareAtCents: 7995,
-    costCents: 2700,
-    stock: 80,
-    images: ["/products/massage-gun.svg"],
+    costCents: 3050,
+    stock: 9934,
+    images: [
+      "https://oss-cf.cjdropshipping.com/product/2026/07/02/09/27e8c31e-439c-4f05-8f25-2bc16c637125.jpg",
+      "https://oss-cf.cjdropshipping.com/product/2026/07/02/09/24101b1f-ad5d-4955-b264-ef71187c15af.jpg",
+      "https://oss-cf.cjdropshipping.com/product/2026/07/02/09/34d8e537-7db6-4af2-bfe4-3e5ca4f44ff2.jpg",
+    ],
     i18n: {
-      en: { name: "Pulse Massage Gun", tagline: "Recovery, on your terms.", description: "Percussive deep-tissue therapy with five intensities and four heads, under 45 dB. Aircraft-grade aluminium body with a 6-hour battery for weeks of sessions per charge." },
-      es: { name: "Pistola de Masaje Pulse", tagline: "Recuperación, a tu manera.", description: "Terapia percusiva de tejido profundo con cinco intensidades y cuatro cabezales, por debajo de 45 dB. Cuerpo de aluminio de grado aeronáutico y batería de 6 horas." },
+      en: { name: "Pulse Mini Massage Gun", tagline: "Recovery that fits in your bag.", description: "Percussive deep-tissue therapy in a truly compact body. Six intensity levels and seven interchangeable heads — including a self-heating head for warm-up — driven by a 28W motor with a rechargeable 1200 mAh battery. Small enough for the gym bag, strong enough for leg day." },
+      es: { name: "Pistola de Masaje Pulse Mini", tagline: "Recuperación que cabe en tu bolsa.", description: "Terapia percusiva de tejido profundo en un cuerpo realmente compacto. Seis niveles de intensidad y siete cabezales intercambiables — incluido uno térmico para calentar — con motor de 28 W y batería recargable de 1200 mAh. Cabe en la bolsa del gimnasio y puede con el día de pierna." },
     },
   },
   {
-    slug: "smart-led-lamp",
-    sku: "TLS-LIGHT-001",
-    supplier: "BIGBUY",
-    supplierProductId: "BB-PENDING-MAP",
-    categorySlug: "lighting",
-    priceCents: 2995,
-    costCents: 1240,
-    stock: 150,
-    images: ["/products/smart-led-lamp.svg"],
-    i18n: {
-      en: { name: "Halo Smart Lamp", tagline: "Light that reads the room.", description: "16 million colours, warm-to-cool white and app or voice control. Halo shifts with your day — crisp light for focus, amber calm for winding down." },
-      es: { name: "Lámpara Inteligente Halo", tagline: "Luz que entiende el momento.", description: "16 millones de colores, blanco cálido a frío y control por app o voz. Halo acompaña tu día: luz nítida para concentrarte, calma ámbar para desconectar." },
-    },
-  },
-  {
+    // CJ pid 2605170708381632700 · CJ SKU CJYD2893876 · verificado: 10.000 mAh,
+    // magnético, carga inalámbrica, carga rápida 9V · variante Silver 10000
     slug: "magsafe-power-bank",
     sku: "TLS-MOB-001",
     supplier: "CJDROPSHIPPING",
-    supplierProductId: "CJ-PENDING-MAP",
+    supplierProductId: "2605170708381633300",
     categorySlug: "mobile-accessories",
     priceCents: 4495,
-    costCents: 1690,
-    stock: 180,
-    images: ["/products/magsafe-power-bank.svg"],
+    costCents: 1300,
+    stock: 9430,
+    images: [
+      "https://oss-cf.cjdropshipping.com/product/2026/05/17/07/f4e548a3-c1c4-4b4a-b0f9-5c72f982bf6c.jpg",
+    ],
     i18n: {
-      en: { name: "Snap Power Bank", tagline: "Power that clicks into place.", description: "A 10,000 mAh magnetic power bank with 15W wireless charging and USB-C PD passthrough. Snaps to MagSafe iPhones and stays put — no cables, no fumbling." },
-      es: { name: "Power Bank Snap", tagline: "Energía que encaja al instante.", description: "Batería magnética de 10.000 mAh con carga inalámbrica de 15 W y USB-C PD. Se acopla a iPhones MagSafe y no se mueve: sin cables, sin complicaciones." },
+      en: { name: "Snap Power Bank", tagline: "Power that clicks into place.", description: "A 10,000 mAh magnetic power bank with fast wireless charging. Snaps onto MagSafe-compatible iPhones and stays put — no cables, no fumbling. Slim 165-gram body that disappears into a pocket." },
+      es: { name: "Power Bank Snap", tagline: "Energía que encaja al instante.", description: "Batería magnética de 10.000 mAh con carga inalámbrica rápida. Se acopla a iPhones compatibles con MagSafe y no se mueve: sin cables, sin complicaciones. Cuerpo fino de 165 gramos que desaparece en el bolsillo." },
     },
   },
   {
+    // CJ pid 2070126026522157058 · CJ SKU CJTF2954902 · verificado: 22L roll-top
+    // expandible, funda acolchada 15,6", impermeable, costuras reforzadas ·
+    // ALMACÉN ALEMANIA (24 uds — vigilar reposición)
     slug: "anti-theft-backpack",
     sku: "TLS-TRAV-001",
     supplier: "CJDROPSHIPPING",
-    supplierProductId: "CJ-PENDING-MAP",
+    supplierProductId: "2070126026828341250",
     categorySlug: "travel",
     priceCents: 4995,
     compareAtCents: 6495,
-    costCents: 1850,
-    stock: 90,
-    images: ["/products/anti-theft-backpack.svg"],
+    costCents: 2530,
+    stock: 24,
+    images: [
+      "https://cf.cjdropshipping.com/17823456/11e0ddea-5da8-4c19-b249-b402f9b6dded.jpg",
+    ],
     i18n: {
-      en: { name: "Vault Backpack", tagline: "Everything with you. Nothing exposed.", description: "Hidden zippers, cut-resistant fabric and an integrated USB pass-through. Fits a 15.6\" laptop with a weight-diffusing back panel for all-day comfort." },
-      es: { name: "Mochila Vault", tagline: "Todo contigo. Nada expuesto.", description: "Cremalleras ocultas, tejido anticorte y puerto USB integrado. Cabe un portátil de 15,6\" con panel trasero que distribuye el peso para llevarla todo el día." },
+      en: { name: "Vault Backpack", tagline: "Everything with you. Nothing exposed.", description: "A 22-litre roll-top backpack that expands to 26L when you need it. Padded 15.6\" laptop sleeve, waterproof fabric, reinforced stitching and a smart multi-pocket layout that keeps valuables tucked away from wandering hands. Ships from our EU warehouse." },
+      es: { name: "Mochila Vault", tagline: "Todo contigo. Nada expuesto.", description: "Mochila roll-top de 22 litros ampliable a 26 L cuando lo necesitas. Funda acolchada para portátil de 15,6\", tejido impermeable, costuras reforzadas y una distribución multibolsillo pensada para mantener lo valioso lejos de manos ajenas. Envío desde almacén europeo." },
     },
   },
   {
+    // CJ pid 2604270537031604100 · CJ SKU CJYD2855805 · verificado: 1080p NATIVO
+    // (1920×1080), Android 11, WiFi, 450 g · variante Android 11 EU
     slug: "mini-projector",
     sku: "TLS-HOME-002",
-    supplier: "BIGBUY",
-    supplierProductId: "BB-PENDING-MAP",
+    supplier: "CJDROPSHIPPING",
+    supplierProductId: "2604270537031604700",
     categorySlug: "smart-home",
     priceCents: 12900,
     compareAtCents: 15900,
-    costCents: 6400,
-    stock: 60,
-    images: ["/products/mini-projector.svg"],
+    costCents: 3130,
+    stock: 5168,
+    images: [
+      "https://oss-cf.cjdropshipping.com/product/2026/04/27/06/99a83745-6c78-467c-9555-c02febc114f5_fine.jpeg",
+      "https://oss-cf.cjdropshipping.com/product/2026/04/27/05/9c5760cb-ae3a-42af-9ff4-29fc17cdfa77.jpg",
+      "https://oss-cf.cjdropshipping.com/product/2026/04/27/05/ea729105-feca-4ec7-a0ae-02a94e8aec8c.jpg",
+    ],
     i18n: {
-      en: { name: "Beam Mini Projector", tagline: "A cinema that fits in one hand.", description: "1080p native resolution, auto keystone and a 120\" picture from three metres. Wi-Fi casting, HDMI and a built-in speaker — movie night, anywhere there's a wall." },
-      es: { name: "Mini Proyector Beam", tagline: "Un cine que cabe en una mano.", description: "Resolución nativa 1080p, corrección automática y 120\" de imagen a tres metros. Wi-Fi, HDMI y altavoz integrado: cine en cualquier pared." },
+      en: { name: "Beam Mini Projector", tagline: "A cinema that fits in one hand.", description: "Native 1080p (1920×1080) resolution with Android 11 built in — your streaming apps live right on the projector, no dongle needed. Wi-Fi, compact 450-gram body and an EU plug in the box. Movie night, anywhere there's a wall." },
+      es: { name: "Mini Proyector Beam", tagline: "Un cine que cabe en una mano.", description: "Resolución nativa 1080p (1920×1080) con Android 11 integrado: tus apps de streaming viven en el propio proyector, sin dongles. Wi-Fi, cuerpo compacto de 450 gramos y enchufe europeo incluido. Cine en cualquier pared." },
     },
   },
 ];
