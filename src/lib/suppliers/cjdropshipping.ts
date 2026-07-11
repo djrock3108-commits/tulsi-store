@@ -40,6 +40,11 @@ async function getAccessToken(): Promise<string> {
   return cachedToken.token;
 }
 
+/** Acceso genérico al API de CJ para módulos internos (scout, sync). */
+export async function cjRequest<T>(path: string, init?: RequestInit): Promise<T> {
+  return cjFetch<T>(path, init);
+}
+
 async function cjFetch<T>(path: string, init?: RequestInit): Promise<T> {
   const token = await getAccessToken();
   const res = await fetch(`${BASE}${path}`, {

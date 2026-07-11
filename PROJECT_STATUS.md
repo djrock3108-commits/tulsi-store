@@ -4,6 +4,14 @@ _Última actualización: 2026-07-11_
 
 ## Estado global
 
+**Fase 4 (conversión y crecimiento) — ACTIVA desde 2026-07-11 noche, por directiva del
+propietario.** El catálogo queda CONGELADO en 6 productos premium; la prioridad pasa a
+optimizar conversión, UX y ventas. Decisiones registradas:
+- **Robot aspirador POSPUESTO** hasta encontrar modelo premium con stock EU, specs verificadas y coste compatible con el margen.
+- **Scout diario automático** (`/api/cron/scout-products`, 07:00 UTC): rastrea CJ por categoría con prioridad almacén EU; **solo informa** (respuesta JSON + ApiLog en /admin/logs) — importar exige aprobación del propietario. Verificado en producción: 13 hallazgos en la primera pasada, incl. 2 aspiradores de coche EU-warehouse.
+- **Respaldos anti-rotura de stock**: mochila → 26L roll-top almacén DE (pid 2070736998999437314, verificada); aspirador coche → HK-V6 brushless CN (pid 2606291147131621000) + candidatos "Pan European" del scout. **Previsión de reposición**: CJ no la expone por API — abrir ticket de sourcing desde la cuenta CJ (acción del propietario).
+- **Alerta de stock bajo** (<20 uds) integrada en el sync diario → /admin/logs.
+
 **Fase 3 (catálogo real) — IMPORTADO Y EN PRODUCCIÓN (2026-07-11 tarde).** 6 productos
 verificados de CJdropshipping en vivo con fotos oficiales, PIDs/VIDs reales y precios
 definitivos; proveedor único: CJ (BigBuy descartado por el propietario). Lámpara smart

@@ -162,6 +162,11 @@ export async function syncCatalog(): Promise<{ synced: number; skipped: number }
             images: hasCuratedImages ? product.images : remote.images.length ? remote.images : product.images,
           },
         });
+        // Alerta de stock bajo (directiva: evitar interrupciones en los
+        // productos de almacén EU con pocas unidades).
+        if (remote.stock < 20) {
+          await log("system", "warn", `STOCK BAJO ${product.sku}: ${remote.stock} uds — activar respaldo o pedir reposición a CJ`);
+        }
         synced++;
       }
     } catch (err) {
