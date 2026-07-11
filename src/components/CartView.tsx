@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { getCart, removeFromCart, subscribeCart, type CartItem } from "@/lib/cart-client";
+import { getCart, removeFromCart, setQuantity, subscribeCart, type CartItem } from "@/lib/cart-client";
 import { formatPrice } from "@/lib/money";
 import type { Locale } from "@/i18n/routing";
 
@@ -67,7 +67,23 @@ export default function CartView() {
             <img src={item.image} alt={item.name} className="h-20 w-20 rounded-xl bg-[#f4f3f1] object-cover" />
             <div className="flex-1">
               <p className="text-sm font-medium">{item.name}</p>
-              <p className="mt-1 text-xs text-muted">× {item.quantity}</p>
+              <div className="mt-2 inline-flex items-center gap-3 rounded-full border border-line px-3 py-1">
+                <button
+                  onClick={() => setQuantity(item.slug, item.quantity - 1)}
+                  aria-label="−"
+                  className="text-sm text-muted transition-colors hover:text-foreground"
+                >
+                  −
+                </button>
+                <span className="min-w-4 text-center text-xs">{item.quantity}</span>
+                <button
+                  onClick={() => setQuantity(item.slug, item.quantity + 1)}
+                  aria-label="+"
+                  className="text-sm text-muted transition-colors hover:text-foreground"
+                >
+                  +
+                </button>
+              </div>
             </div>
             <div className="text-right">
               <p className="text-sm font-semibold">{formatPrice(item.priceCents * item.quantity, locale)}</p>

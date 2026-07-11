@@ -1,5 +1,8 @@
 {
-  "nav": { "shop": "Tienda", "cart": "Cesta" },
+  "nav": {
+    "shop": "Tienda",
+    "cart": "Cesta"
+  },
   "hero": {
     "eyebrow": "Tecnología premium para el día a día",
     "title": "Diseñada para integrarse en tu vida.",
@@ -41,6 +44,9 @@
   },
   "footer": {
     "tagline": "Tecnología premium para el día a día, con envío a toda Europa.",
-    "rights": "Todos los derechos reservados."
+    "rights": "Todos los derechos reservados.",
+    "privacy": "Privacidad",
+    "terms": "Condiciones",
+    "shipping": "Envíos y Devoluciones"
   }
 }

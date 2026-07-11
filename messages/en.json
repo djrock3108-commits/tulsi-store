@@ -1,5 +1,8 @@
 {
-  "nav": { "shop": "Shop", "cart": "Cart" },
+  "nav": {
+    "shop": "Shop",
+    "cart": "Cart"
+  },
   "hero": {
     "eyebrow": "Premium everyday technology",
     "title": "Designed to disappear into your life.",
@@ -41,6 +44,9 @@
   },
   "footer": {
     "tagline": "Premium everyday technology, shipped across Europe.",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "shipping": "Shipping & Returns"
   }
 }

@@ -1,5 +1,8 @@
 {
-  "nav": { "shop": "Negozio", "cart": "Carrello" },
+  "nav": {
+    "shop": "Negozio",
+    "cart": "Carrello"
+  },
   "hero": {
     "eyebrow": "Tecnologia premium per ogni giorno",
     "title": "Progettata per fondersi nella tua vita.",
@@ -41,6 +44,9 @@
   },
   "footer": {
     "tagline": "Tecnologia premium per ogni giorno, spedita in tutta Europa.",
-    "rights": "Tutti i diritti riservati."
+    "rights": "Tutti i diritti riservati.",
+    "privacy": "Privacy",
+    "terms": "Termini",
+    "shipping": "Spedizioni e Resi"
   }
 }

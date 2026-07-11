@@ -4,6 +4,7 @@ import { Link } from "@/i18n/navigation";
 import { getProduct, getProducts } from "@/lib/catalog";
 import { formatPrice } from "@/lib/money";
 import AddToCart from "@/components/AddToCart";
+import ProductGallery from "@/components/ProductGallery";
 import { LOCALES, type Locale } from "@/i18n/routing";
 import type { Metadata } from "next";
 
@@ -75,10 +76,7 @@ export default async function ProductPage({
         ← {t("backToShop")}
       </Link>
       <div className="mt-8 grid grid-cols-1 gap-12 lg:grid-cols-2">
-        <div className="animate-fade-up overflow-hidden rounded-3xl bg-[#f4f3f1]">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={product.images[0]} alt={product.name} className="h-full w-full object-cover" />
-        </div>
+        <ProductGallery images={product.images} alt={product.name} />
         <div className="animate-fade-up delay-100 flex flex-col justify-center">
           <p className="text-xs uppercase tracking-[0.3em] text-muted">
             {product.stock > 0 ? t("inStock") : t("outOfStock")}

@@ -42,6 +42,14 @@ export function removeFromCart(slug: string): void {
   persist(getCart().filter((i) => i.slug !== slug));
 }
 
+export function setQuantity(slug: string, quantity: number): void {
+  const items = getCart();
+  const item = items.find((i) => i.slug === slug);
+  if (!item) return;
+  item.quantity = Math.max(1, Math.min(quantity, 10));
+  persist(items);
+}
+
 export function clearCart(): void {
   persist([]);
 }

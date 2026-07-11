@@ -1,5 +1,8 @@
 {
-  "nav": { "shop": "Boutique", "cart": "Panier" },
+  "nav": {
+    "shop": "Boutique",
+    "cart": "Panier"
+  },
   "hero": {
     "eyebrow": "Technologie premium du quotidien",
     "title": "Conçue pour se fondre dans votre vie.",
@@ -41,6 +44,9 @@
   },
   "footer": {
     "tagline": "Technologie premium du quotidien, expédiée dans toute l'Europe.",
-    "rights": "Tous droits réservés."
+    "rights": "Tous droits réservés.",
+    "privacy": "Confidentialité",
+    "terms": "CGV",
+    "shipping": "Livraison & Retours"
   }
 }

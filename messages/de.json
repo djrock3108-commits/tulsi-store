@@ -1,5 +1,8 @@
 {
-  "nav": { "shop": "Shop", "cart": "Warenkorb" },
+  "nav": {
+    "shop": "Shop",
+    "cart": "Warenkorb"
+  },
   "hero": {
     "eyebrow": "Premium-Technologie für jeden Tag",
     "title": "Entworfen, um Teil deines Lebens zu werden.",
@@ -41,6 +44,9 @@
   },
   "footer": {
     "tagline": "Premium-Technologie für jeden Tag, versandt in ganz Europa.",
-    "rights": "Alle Rechte vorbehalten."
+    "rights": "Alle Rechte vorbehalten.",
+    "privacy": "Datenschutz",
+    "terms": "AGB",
+    "shipping": "Versand & Rückgabe"
   }
 }

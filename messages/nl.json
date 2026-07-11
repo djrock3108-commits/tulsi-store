@@ -1,5 +1,8 @@
 {
-  "nav": { "shop": "Shop", "cart": "Winkelwagen" },
+  "nav": {
+    "shop": "Shop",
+    "cart": "Winkelwagen"
+  },
   "hero": {
     "eyebrow": "Premium technologie voor elke dag",
     "title": "Ontworpen om op te gaan in je leven.",
@@ -41,6 +44,9 @@
   },
   "footer": {
     "tagline": "Premium technologie voor elke dag, verzonden door heel Europa.",
-    "rights": "Alle rechten voorbehouden."
+    "rights": "Alle rechten voorbehouden.",
+    "privacy": "Privacy",
+    "terms": "Voorwaarden",
+    "shipping": "Verzending & Retouren"
   }
 }
