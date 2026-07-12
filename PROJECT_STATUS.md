@@ -4,6 +4,13 @@ _Última actualización: 2026-07-11_
 
 ## Estado global
 
+**Rediseño editorial premium — EN VIVO (2026-07-12).** Home estilo editorial (hero collage,
+franja de confianza, bloques narrativos, mosaico de categorías, "Por qué Tulsi", FAQ,
+newsletter con consentimiento RGPD → tabla Subscriber), PDP con galería/relacionados/barra
+de compra móvil/estimación de envío por almacén, 404 premium, header con scroll y menú
+móvil, animaciones scroll-reveal (reduced-motion OK), Analytics + Speed Insights activos.
+Pendiente fase futura: GA4+consentimiento, píxeles, reseñas verificadas (ver chat 12/07).
+
 **Fase 4 (conversión y crecimiento) — ACTIVA desde 2026-07-11 noche, por directiva del
 propietario.** El catálogo queda CONGELADO en 6 productos premium; la prioridad pasa a
 optimizar conversión, UX y ventas. Decisiones registradas:
