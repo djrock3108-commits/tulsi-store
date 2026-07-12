@@ -1,7 +1,9 @@
 {
   "nav": {
     "shop": "Shop",
-    "cart": "Warenkorb"
+    "cart": "Warenkorb",
+    "faq": "FAQ",
+    "about": "Warum Tulsi"
   },
   "hero": {
     "eyebrow": "Premium-Technologie für jeden Tag",

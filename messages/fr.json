@@ -1,7 +1,9 @@
 {
   "nav": {
     "shop": "Boutique",
-    "cart": "Panier"
+    "cart": "Panier",
+    "faq": "FAQ",
+    "about": "Pourquoi Tulsi"
   },
   "hero": {
     "eyebrow": "Technologie premium du quotidien",

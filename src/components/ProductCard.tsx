@@ -9,15 +9,25 @@ export default function ProductCard({ product, locale }: { product: CatalogProdu
       href={`/products/${product.slug}`}
       className="group block overflow-hidden rounded-2xl border border-line bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_-20px_rgba(0,0,0,0.15)]"
     >
-      <div className="aspect-square overflow-hidden bg-[#f4f3f1]">
-        {/* Placeholder art until the supplier image sync runs; supplier CDNs are allowed in next.config. */}
+      <div className="relative aspect-square overflow-hidden bg-[#f4f3f1]">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={product.images[0]}
           alt={product.name}
           loading="lazy"
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+          className="h-full w-full object-cover transition-all duration-500 group-hover:scale-[1.03]"
         />
+        {product.images[1] && (
+          /* Segunda vista oficial al pasar el cursor */
+          /* eslint-disable-next-line @next/next/no-img-element */
+          <img
+            src={product.images[1]}
+            alt=""
+            loading="lazy"
+            aria-hidden
+            className="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+          />
+        )}
       </div>
       <div className="p-5">
         <h3 className="text-sm font-medium">{product.name}</h3>

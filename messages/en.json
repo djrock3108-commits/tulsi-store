@@ -1,7 +1,9 @@
 {
   "nav": {
     "shop": "Shop",
-    "cart": "Cart"
+    "cart": "Cart",
+    "faq": "FAQ",
+    "about": "Why Tulsi"
   },
   "hero": {
     "eyebrow": "Premium everyday technology",

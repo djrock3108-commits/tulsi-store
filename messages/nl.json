@@ -1,7 +1,9 @@
 {
   "nav": {
     "shop": "Shop",
-    "cart": "Winkelwagen"
+    "cart": "Winkelwagen",
+    "faq": "FAQ",
+    "about": "Waarom Tulsi"
   },
   "hero": {
     "eyebrow": "Premium technologie voor elke dag",

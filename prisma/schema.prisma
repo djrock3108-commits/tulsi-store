@@ -145,6 +145,17 @@ model SupplierOrder {
   @@index([supplier, status])
 }
 
+// Suscriptores de newsletter (formulario de la home; RGPD: consentimiento
+// explícito registrado; doble opt-in se activará junto con Resend).
+model Subscriber {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  locale    String   @default("en")
+  consent   Boolean  @default(true)
+  confirmed Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
 // Structured operational log surfaced in the admin panel.
 model ApiLog {
   id        String   @id @default(cuid())
