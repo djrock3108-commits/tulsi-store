@@ -29,7 +29,10 @@
     "inStock": "En stock",
     "outOfStock": "Épuisé",
     "freeShipping": "Livraison offerte · Expédié sous 24h",
-    "backToShop": "Retour à la boutique"
+    "backToShop": "Retour à la boutique",
+    "related": "Vous aimerez peut-être aussi",
+    "shipEU": "Livraison offerte depuis notre entrepôt UE · 4–8 jours",
+    "shipIntl": "Livraison offerte avec suivi · 8–18 jours"
   },
   "cart": {
     "title": "Votre panier",
@@ -50,5 +53,10 @@
     "privacy": "Confidentialité",
     "terms": "CGV",
     "shipping": "Livraison & Retours"
+  },
+  "notFound": {
+    "title": "Cette page s est égarée.",
+    "body": "La page que vous cherchez n existe pas ou a été déplacée.",
+    "cta": "Retour à la boutique"
   }
 }

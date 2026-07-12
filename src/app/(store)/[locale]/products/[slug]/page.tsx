@@ -5,6 +5,13 @@ import { getProduct, getProducts } from "@/lib/catalog";
 import { formatPrice } from "@/lib/money";
 import AddToCart from "@/components/AddToCart";
 import ProductGallery from "@/components/ProductGallery";
+import ProductCard from "@/components/ProductCard";
+import StickyBuyBar from "@/components/StickyBuyBar";
+import Reveal from "@/components/Reveal";
+
+// Productos servidos desde almacén europeo (ver PRODUCT_SELECTION_REPORT.md):
+// determinan la estimación de entrega mostrada en la ficha.
+const EU_WAREHOUSE_SLUGS = new Set(["car-handheld-vacuum", "anti-theft-backpack"]);
 import { LOCALES, type Locale } from "@/i18n/routing";
 import type { Metadata } from "next";
 
@@ -45,11 +52,14 @@ export default async function ProductPage({
 }) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
-  const [t, product] = await Promise.all([
+  const [t, product, allProducts] = await Promise.all([
     getTranslations("product"),
     getProduct(locale as Locale, slug),
+    getProducts(locale as Locale),
   ]);
   if (!product) notFound();
+  const related = allProducts.filter((p) => p.slug !== slug).slice(0, 3);
+  const shippingLine = EU_WAREHOUSE_SLUGS.has(slug) ? t("shipEU") : t("shipIntl");
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -104,10 +114,35 @@ export default async function ProductPage({
               image={product.images[0]}
               inStock={product.stock > 0}
             />
-            <p className="mt-3 text-center text-xs text-muted">{t("freeShipping")}</p>
+            <p className="mt-3 text-center text-xs text-muted">{shippingLine}</p>
           </div>
         </div>
       </div>
+
+      {/* Relacionados */}
+      {related.length > 0 && (
+        <section className="mt-24">
+          <Reveal>
+            <h2 className="text-xs uppercase tracking-[0.3em] text-muted">{t("related")}</h2>
+          </Reveal>
+          <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-3">
+            {related.map((p, i) => (
+              <Reveal key={p.slug} delay={i * 90}>
+                <ProductCard product={p} locale={locale as Locale} />
+              </Reveal>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <StickyBuyBar
+        slug={product.slug}
+        name={product.name}
+        priceCents={product.priceCents}
+        image={product.images[0]}
+        inStock={product.stock > 0}
+        locale={locale as Locale}
+      />
     </div>
   );
 }

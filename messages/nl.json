@@ -29,7 +29,10 @@
     "inStock": "Op voorraad",
     "outOfStock": "Uitverkocht",
     "freeShipping": "Gratis verzending · Binnen 24u verzonden",
-    "backToShop": "Terug naar de shop"
+    "backToShop": "Terug naar de shop",
+    "related": "Misschien vind je dit ook mooi",
+    "shipEU": "Gratis verzending uit ons EU-magazijn · 4–8 dagen",
+    "shipIntl": "Gratis verzending met tracking · 8–18 dagen"
   },
   "cart": {
     "title": "Je winkelwagen",
@@ -50,5 +53,10 @@
     "privacy": "Privacy",
     "terms": "Voorwaarden",
     "shipping": "Verzending & Retouren"
+  },
+  "notFound": {
+    "title": "Deze pagina is verdwaald.",
+    "body": "De pagina die je zoekt bestaat niet of is verplaatst.",
+    "cta": "Terug naar de shop"
   }
 }

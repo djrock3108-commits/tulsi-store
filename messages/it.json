@@ -29,7 +29,10 @@
     "inStock": "Disponibile",
     "outOfStock": "Esaurito",
     "freeShipping": "Spedizione gratuita · Spedito entro 24h",
-    "backToShop": "Torna al negozio"
+    "backToShop": "Torna al negozio",
+    "related": "Potrebbe piacerti anche",
+    "shipEU": "Spedizione gratuita dal nostro magazzino UE · 4–8 giorni",
+    "shipIntl": "Spedizione gratuita tracciata · 8–18 giorni"
   },
   "cart": {
     "title": "Il tuo carrello",
@@ -50,5 +53,10 @@
     "privacy": "Privacy",
     "terms": "Termini",
     "shipping": "Spedizioni e Resi"
+  },
+  "notFound": {
+    "title": "Questa pagina si è persa.",
+    "body": "La pagina che cerchi non esiste o è stata spostata.",
+    "cta": "Torna al negozio"
   }
 }

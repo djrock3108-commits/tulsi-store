@@ -29,7 +29,10 @@
     "inStock": "En stock",
     "outOfStock": "Agotado",
     "freeShipping": "Envío gratis · Sale en 24h",
-    "backToShop": "Volver a la tienda"
+    "backToShop": "Volver a la tienda",
+    "related": "También te puede gustar",
+    "shipEU": "Envío gratis desde almacén europeo · 4–8 días",
+    "shipIntl": "Envío gratis con seguimiento · 8–18 días"
   },
   "cart": {
     "title": "Tu cesta",
@@ -50,5 +53,10 @@
     "privacy": "Privacidad",
     "terms": "Condiciones",
     "shipping": "Envíos y Devoluciones"
+  },
+  "notFound": {
+    "title": "Esta página se perdió por el camino.",
+    "body": "La página que buscas no existe o se ha movido.",
+    "cta": "Volver a la tienda"
   }
 }
