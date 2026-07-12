@@ -21,7 +21,7 @@ CJ; adaptador corregido (stock vía queryByVid). Credenciales CJ en Vercel; sync
 Alertas de stock: aspirador coche 10 uds (FR), mochila 24 uds (DE) — el cron los vigila.
 
 
-**Fase 2 (producción) — DESPLEGADA (2026-07-11).** Live en https://tulsi-store-lpnb.vercel.app
+**Fase 2 (producción) — DESPLEGADA (2026-07-11).** Live en https://tulsi.store (dominio propio + SSL desde 2026-07-12; alias técnico tulsi-store-lpnb.vercel.app)
 (proyecto Vercel `tulsi-store-lpnb`, cuenta djrock3108-9888). Dominios tulsi.store y
 www.tulsi.store vinculados al proyecto; falta solo el cambio DNS en Vimexx (ver DEPLOYMENT.md).
 Env configuradas: ADMIN_USER/ADMIN_PASSWORD (ver ADMIN_CREDENTIALS.local.txt, solo local),
