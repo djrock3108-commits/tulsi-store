@@ -32,7 +32,7 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <Link href="/" className="block leading-none" onClick={() => setOpen(false)}>
+        <Link href="/" className="block rounded-sm py-2 leading-none" onClick={() => setOpen(false)}>
           <span className="font-serif text-lg font-semibold tracking-[0.25em]">TULSI</span>
           <span className="mt-1 block text-[8px] uppercase tracking-[0.34em] text-gold">
             Authentic Jyotish
@@ -49,7 +49,7 @@ export default function Header() {
           <LocaleSwitcher />
           <Link
             href="/order"
-            className="rounded-full bg-accent px-6 py-2.5 text-sm font-medium text-accent-foreground transition-colors duration-200 hover:bg-accent-hover"
+            className="premium-button inline-flex items-center rounded-full bg-accent px-6 py-2.5 text-sm font-medium text-accent-foreground hover:bg-accent-hover"
           >
             {t("order")}
           </Link>
@@ -60,7 +60,7 @@ export default function Header() {
           <Link
             href="/order"
             onClick={() => setOpen(false)}
-            className="rounded-full bg-accent px-4 py-2 text-xs font-medium text-accent-foreground"
+            className="premium-button inline-flex items-center whitespace-nowrap rounded-full bg-accent px-4 py-2 text-xs font-medium text-accent-foreground"
           >
             {t("order")}
           </Link>
@@ -68,7 +68,7 @@ export default function Header() {
             aria-label="Menu"
             aria-expanded={open}
             onClick={() => setOpen(!open)}
-            className="flex h-9 w-9 flex-col items-center justify-center gap-1.5"
+            className="flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-full"
           >
             <span className={`h-px w-5 bg-foreground transition-transform ${open ? "translate-y-[3.5px] rotate-45" : ""}`} />
             <span className={`h-px w-5 bg-foreground transition-transform ${open ? "-translate-y-[3.5px] -rotate-45" : ""}`} />

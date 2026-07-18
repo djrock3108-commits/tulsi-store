@@ -24,9 +24,18 @@ export default function KundaliArt({ className = "" }: { className?: string }) {
       fill="none"
       stroke="currentColor"
       strokeWidth="1.1"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       aria-hidden
       className={className}
     >
+      <defs>
+        <filter id="hand-drafted" x="-4%" y="-4%" width="108%" height="108%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="2" seed="11" result="grain" />
+          <feDisplacementMap in="SourceGraphic" in2="grain" scale="1.35" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+      </defs>
+      <g filter="url(#hand-drafted)">
       {/* Anillos del astrolabio */}
       <circle cx="400" cy="400" r="370" />
       <circle cx="400" cy="400" r="345" />
@@ -52,6 +61,12 @@ export default function KundaliArt({ className = "" }: { className?: string }) {
       {/* Arco de Jantar Mantar (cuadrante inferior) */}
       <path d="M 640 700 A 240 240 0 0 0 700 640" strokeWidth="0.9" />
       <path d="M 620 716 A 260 260 0 0 0 716 620" strokeWidth="0.9" strokeDasharray="1 6" />
+      {/* Marcas marginales inspiradas en láminas astronómicas manuscritas. */}
+      <path d="M74 398 C96 386 105 386 124 398 C105 410 96 410 74 398Z" strokeWidth="0.75" />
+      <path d="M676 398 C695 386 704 386 726 398 C704 410 695 410 676 398Z" strokeWidth="0.75" />
+      <path d="M397 72 C385 94 385 103 397 122 C409 103 409 94 397 72Z" strokeWidth="0.75" />
+      <path d="M397 678 C385 697 385 706 397 728 C409 706 409 697 397 678Z" strokeWidth="0.75" />
+      </g>
     </svg>
   );
 }
