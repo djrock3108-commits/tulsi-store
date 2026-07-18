@@ -12,7 +12,8 @@ export default function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col gap-6 px-6 py-14 md:flex-row md:items-center md:justify-between">
         <div>
           <p className="font-serif text-sm font-semibold tracking-[0.25em]">TULSI</p>
-          <p className="mt-2 max-w-sm text-sm text-muted">{t("tagline")}</p>
+          <p className="mt-1 text-[9px] uppercase tracking-[0.34em] text-gold">Authentic Jyotish</p>
+          <p className="mt-3 max-w-sm text-sm text-muted">{t("tagline")}</p>
         </div>
         <div className="flex flex-col gap-3 md:items-end">
           <nav className="flex flex-wrap gap-5 text-xs text-muted">

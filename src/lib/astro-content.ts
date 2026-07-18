@@ -10,6 +10,7 @@ import { ASTRO_EXTRA } from "./astro-content-locales";
 
 export interface AstroContent {
   hero: { eyebrow: string; title: string; subtitle: string; cta: string; secondary: string };
+  heroTrust: string[];
   intro: { kicker: string; title: string; body: string[]; diffTitle: string; diffs: string[] };
   discover: { title: string; items: string[] };
   why: { title: string; items: { title: string; body: string }[] };
@@ -32,11 +33,12 @@ const BASE: Entry = {
   en: {
     hero: {
       eyebrow: "Authentic Jyotish · Since time immemorial",
-      title: "Discover Your Destiny Through Authentic Vedic Astrology",
+      title: "The Sky Remembered the Moment You Were Born",
       subtitle: "A personalized birth chart analysis prepared entirely by hand by experienced Vedic Astrology scholars — delivered within 24 hours of payment.",
       cta: "Order My Horoscope",
       secondary: "How it works",
     },
+    heroTrust: ["Prepared by experienced Jyotish scholars", "No AI-generated reports", "Authentic Vedic tradition", "Private & confidential", "Delivered within 24 hours"],
     intro: {
       kicker: "What is Vedic Astrology?",
       title: "The science of light, older than history.",
@@ -133,11 +135,12 @@ const BASE: Entry = {
   es: {
     hero: {
       eyebrow: "Jyotish auténtico · Desde tiempo inmemorial",
-      title: "Descubre tu destino a través de la Astrología Védica auténtica",
+      title: "El cielo recordó el momento en que naciste",
       subtitle: "Un análisis personalizado de tu carta natal, elaborado íntegramente a mano por eruditos experimentados en Astrología Védica — entregado en menos de 24 horas tras el pago.",
       cta: "Pedir mi horóscopo",
       secondary: "Cómo funciona",
     },
+    heroTrust: ["Elaborado por eruditos experimentados del Jyotish", "Sin informes generados por IA", "Tradición védica auténtica", "Privado y confidencial", "Entrega en 24 horas"],
     intro: {
       kicker: "¿Qué es la Astrología Védica?",
       title: "La ciencia de la luz, más antigua que la historia.",

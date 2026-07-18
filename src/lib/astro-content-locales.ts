@@ -6,11 +6,12 @@ export const ASTRO_EXTRA: Partial<Record<Locale, AstroContent>> = {
   nl: {
     hero: {
       eyebrow: "Authentieke Jyotish · Sinds mensenheugenis",
-      title: "Ontdek je bestemming via authentieke Vedische astrologie",
+      title: "De hemel onthield het moment waarop je werd geboren",
       subtitle: "Een persoonlijke geboortehoroscoop, volledig met de hand opgesteld door ervaren geleerden in de Vedische astrologie — geleverd binnen 24 uur na betaling.",
       cta: "Bestel mijn horoscoop",
       secondary: "Hoe het werkt",
     },
+    heroTrust: ["Opgesteld door ervaren Jyotish-geleerden", "Geen AI-rapporten", "Authentieke Vedische traditie", "Privé & vertrouwelijk", "Geleverd binnen 24 uur"],
     intro: {
       kicker: "Wat is Vedische astrologie?",
       title: "De wetenschap van het licht, ouder dan de geschiedenis.",
@@ -86,11 +87,12 @@ export const ASTRO_EXTRA: Partial<Record<Locale, AstroContent>> = {
   de: {
     hero: {
       eyebrow: "Authentisches Jyotish · Seit undenklichen Zeiten",
-      title: "Entdecke dein Schicksal durch authentische vedische Astrologie",
+      title: "Der Himmel erinnerte sich an den Moment deiner Geburt",
       subtitle: "Eine persönliche Geburtshoroskop-Analyse, vollständig von Hand erstellt von erfahrenen Gelehrten der vedischen Astrologie — geliefert innerhalb von 24 Stunden nach Zahlung.",
       cta: "Mein Horoskop bestellen",
       secondary: "So funktioniert es",
     },
+    heroTrust: ["Erstellt von erfahrenen Jyotish-Gelehrten", "Keine KI-Berichte", "Authentische vedische Tradition", "Privat & vertraulich", "Lieferung in 24 Stunden"],
     intro: {
       kicker: "Was ist vedische Astrologie?",
       title: "Die Wissenschaft des Lichts, älter als die Geschichte.",
@@ -166,11 +168,12 @@ export const ASTRO_EXTRA: Partial<Record<Locale, AstroContent>> = {
   fr: {
     hero: {
       eyebrow: "Jyotish authentique · Depuis des temps immémoriaux",
-      title: "Découvrez votre destinée grâce à l'astrologie védique authentique",
+      title: "Le ciel s'est souvenu de l'instant de votre naissance",
       subtitle: "Une analyse personnalisée de votre thème natal, réalisée entièrement à la main par des érudits expérimentés en astrologie védique — livrée sous 24 heures après paiement.",
       cta: "Commander mon horoscope",
       secondary: "Comment ça marche",
     },
+    heroTrust: ["Préparé par des érudits expérimentés du Jyotish", "Aucun rapport généré par IA", "Tradition védique authentique", "Privé & confidentiel", "Livré sous 24 heures"],
     intro: {
       kicker: "Qu'est-ce que l'astrologie védique ?",
       title: "La science de la lumière, plus ancienne que l'histoire.",
@@ -246,11 +249,12 @@ export const ASTRO_EXTRA: Partial<Record<Locale, AstroContent>> = {
   it: {
     hero: {
       eyebrow: "Jyotish autentico · Da tempo immemorabile",
-      title: "Scopri il tuo destino attraverso l'astrologia vedica autentica",
+      title: "Il cielo ha ricordato il momento in cui sei nato",
       subtitle: "Un'analisi personalizzata del tuo tema natale, elaborata interamente a mano da eruditi esperti di astrologia vedica — consegnata entro 24 ore dal pagamento.",
       cta: "Ordina il mio oroscopo",
       secondary: "Come funziona",
     },
+    heroTrust: ["Preparato da eruditi esperti di Jyotish", "Nessun rapporto generato dall'IA", "Tradizione vedica autentica", "Privato e riservato", "Consegna in 24 ore"],
     intro: {
       kicker: "Cos'è l'astrologia vedica?",
       title: "La scienza della luce, più antica della storia.",

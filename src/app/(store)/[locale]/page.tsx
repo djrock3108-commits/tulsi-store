@@ -2,7 +2,19 @@ import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { getAstroContent } from "@/lib/astro-content";
 import Reveal from "@/components/Reveal";
+import KundaliArt from "@/components/KundaliArt";
 import type { Locale } from "@/i18n/routing";
+
+/** Línea ornamental tradicional entre secciones — página de un libro antiguo. */
+function Ornament() {
+  return (
+    <div aria-hidden className="mx-auto mt-24 flex max-w-xs items-center gap-4 px-6 md:mt-32">
+      <span className="h-px flex-1 bg-line" />
+      <span className="text-xs text-gold">✦</span>
+      <span className="h-px flex-1 bg-line" />
+    </div>
+  );
+}
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -13,6 +25,10 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
     <>
       {/* ── Hero ──────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden">
+        {/* Carta védica gigante al 4% — se siente antes de verse */}
+        <div aria-hidden className="pointer-events-none absolute inset-0 flex items-center justify-center text-foreground">
+          <KundaliArt className="h-[880px] w-[880px] shrink-0 opacity-[0.045]" />
+        </div>
         <div aria-hidden className="pointer-events-none absolute inset-0 text-gold-light/40">
           <span className="absolute left-[12%] top-[18%] text-xs">✦</span>
           <span className="absolute right-[18%] top-[26%] text-[10px]">✦</span>
@@ -20,7 +36,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <span className="absolute right-[10%] top-[58%] text-sm">✦</span>
           <span className="absolute left-[46%] top-[12%] text-[8px]">✦</span>
         </div>
-        <div className="mx-auto max-w-4xl px-6 pb-24 pt-24 text-center md:pb-36 md:pt-36">
+        <div className="relative mx-auto max-w-4xl px-6 pb-20 pt-24 text-center md:pb-28 md:pt-36">
           <p className="animate-fade-up text-xs uppercase tracking-[0.3em] text-gold">{c.hero.eyebrow}</p>
           <h1 className="animate-fade-up delay-100 mx-auto mt-7 max-w-3xl text-balance font-serif text-5xl font-medium leading-[1.06] tracking-tight md:text-7xl">
             {c.hero.title}
@@ -42,6 +58,15 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               {c.hero.secondary}
             </Link>
           </div>
+          {/* Indicadores de confianza junto al CTA */}
+          <ul className="animate-fade-up delay-300 mx-auto mt-10 flex max-w-2xl flex-wrap items-center justify-center gap-x-5 gap-y-2">
+            {c.heroTrust.map((item) => (
+              <li key={item} className="flex items-center gap-2 text-[11px] tracking-wide text-muted">
+                <span className="text-[8px] text-gold">✦</span>
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -88,6 +113,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </div>
         </Reveal>
       </section>
+
+      <Ornament />
 
       {/* ── Why Choose Us ─────────────────────────────────────────── */}
       <section id="why" className="mx-auto max-w-6xl scroll-mt-24 px-6 pt-24 md:pt-32">
@@ -151,6 +178,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </div>
         </Reveal>
       </section>
+
+      <Ornament />
 
       {/* ── FAQ ───────────────────────────────────────────────────── */}
       <section id="faq" className="mx-auto max-w-2xl scroll-mt-24 px-6 pt-24 md:pt-32">

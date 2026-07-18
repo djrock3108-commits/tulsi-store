@@ -32,8 +32,11 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <Link href="/" className="font-serif text-lg font-semibold tracking-[0.25em]" onClick={() => setOpen(false)}>
-          TULSI
+        <Link href="/" className="block leading-none" onClick={() => setOpen(false)}>
+          <span className="font-serif text-lg font-semibold tracking-[0.25em]">TULSI</span>
+          <span className="mt-1 block text-[8px] uppercase tracking-[0.34em] text-gold">
+            Authentic Jyotish
+          </span>
         </Link>
 
         {/* Escritorio */}
