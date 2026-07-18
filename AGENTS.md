@@ -18,8 +18,9 @@ El e-commerce anterior vive completo en la rama git **`shop-backup`**.
 
 ## Reglas del propietario (vigentes)
 
-- **El análisis es 100% humano** — la web lo promete; JAMÁS generar horóscopos con IA ni
-  sugerir automatizarlos. Claude solo construye la plataforma.
+- **Postura NEUTRAL sobre el método** (decisión del propietario, 2026-07-18): la web NO
+  afirma ni "hecho a mano / por humanos / eruditos" ni "con IA" — habla solo de tradición
+  auténtica y preparación individual. No reintroducir claims de método en ningún idioma.
 - **Sin pasarela de pago en la web** por diseño: el admin envía enlaces PayPal manualmente
   desde `/admin/requests`. No integrar checkout automático sin orden expresa.
 - Nada inventado (testimonios, credenciales, urgencia). Tono digno, no "esotérico barato".
