@@ -7,11 +7,11 @@ export const ASTRO_EXTRA: Partial<Record<Locale, AstroContent>> = {
     hero: {
       eyebrow: "Authentieke Jyotish · Sinds mensenheugenis",
       title: "De hemel onthield het moment waarop je werd geboren",
-      subtitle: "Een persoonlijke geboortehoroscoop, volledig met de hand opgesteld door ervaren geleerden in de Vedische astrologie — geleverd binnen 24 uur na betaling.",
+      subtitle: "Een persoonlijke geboortehoroscoop in de authentieke Jyotish-traditie — geleverd binnen 24 uur na betaling.",
       cta: "Bestel mijn horoscoop",
       secondary: "Hoe het werkt",
     },
-    heroTrust: ["Opgesteld door ervaren Jyotish-geleerden", "Geen AI-rapporten", "Authentieke Vedische traditie", "Privé & vertrouwelijk", "Geleverd binnen 24 uur"],
+    heroTrust: ["Authentieke Vedische traditie", "Elke lezing individueel voorbereid", "Privé & vertrouwelijk", "Geleverd binnen 24 uur"],
     intro: {
       kicker: "Wat is Vedische astrologie?",
       title: "De wetenschap van het licht, ouder dan de geschiedenis.",
@@ -35,9 +35,9 @@ export const ASTRO_EXTRA: Partial<Record<Locale, AstroContent>> = {
       title: "Waarom Tulsi",
       items: [
         { title: "Authentieke traditie", body: "Analyse geworteld in de klassieke teksten — Brihat Parashara Hora Shastra, Phala Dipika, Brihat Jataka — geciteerd in je rapport." },
-        { title: "100% menselijke analyse", body: "Elke kaart wordt met de hand berekend en geïnterpreteerd door ervaren Jyotish-geleerden. Nooit door software of AI." },
-        { title: "Tientallen jaren ervaring", body: "Onze geleerden bestuderen en beoefenen de Vedische astrologie al decennia binnen haar levende traditie." },
-        { title: "Werkelijk persoonlijk", body: "Geen sjablonen. Je rapport wordt voor jou en over jou geschreven — met een persoonlijke brief van je astroloog." },
+        { title: "Elke kaart is uniek", body: "Je lezing wordt specifiek opgesteld op basis van je exacte geboortegegevens — nooit vanuit een sjabloon." },
+        { title: "Een levende traditie", body: "Jyotish begeleidt zoekers al duizenden jaren; elke Tulsi-lezing werkt binnen die ononderbroken traditie." },
+        { title: "Werkelijk persoonlijk", body: "Geen sjablonen. Je rapport wordt voor jou en over jou geschreven — tot en met de persoonlijke slotbrief." },
         { title: "Geleverd binnen 24 uur", body: "Je volledige rapport komt als PDF per e-mail binnen 24 uur na betalingsbevestiging." },
         { title: "Volledig vertrouwelijk", body: "Je geboortegegevens en je lezing blijven strikt privé, altijd." },
       ],
@@ -47,19 +47,19 @@ export const ASTRO_EXTRA: Partial<Record<Locale, AstroContent>> = {
       steps: [
         { title: "Deel je geboortegegevens", body: "Vul het formulier in met je datum, exacte tijd en geboorteplaats. Twee minuten." },
         { title: "Ontvang je betaallink", body: "Binnen enkele uren sturen we je per e-mail een veilige PayPal-betaallink." },
-        { title: "Onze geleerden beginnen", body: "Na betalingsbevestiging wordt je kaart volledig met de hand berekend en geïnterpreteerd." },
+        { title: "Je lezing wordt voorbereid", body: "Na betalingsbevestiging wordt je volledige lezing opgesteld op basis van je exacte geboortegegevens." },
         { title: "Ontvang je rapport", body: "Binnen 24 uur landt je persoonlijke horoscoop als PDF in je inbox." },
       ],
     },
     receive: {
       title: "Wat je ontvangt",
       note: "Een volledige Life Management Reading — doorgaans 15–25 pagina's, in klassieke stijl.",
-      items: ["Je ascendant (Lagna) — met klassieke citaten", "Je maanteken en zijn waardigheden", "Je Nakshatra (geboortester), godheid en symbool", "Alle negen planeten, huis voor huis", "Je planeetcombinaties (Yoga's)", "Sade Sati — Saturnus' grote cycli, gedateerd", "Vimshottari Dasha — de grote perioden van je leven", "De komende tien jaar, periode voor periode", "Carrière, relaties en huwelijk", "Krachten, uitdagingen en levensdoel", "Traditionele remedies voor jou gekozen", "Een persoonlijke brief van je astroloog"],
+      items: ["Je ascendant (Lagna) — met klassieke citaten", "Je maanteken en zijn waardigheden", "Je Nakshatra (geboortester), godheid en symbool", "Alle negen planeten, huis voor huis", "Je planeetcombinaties (Yoga's)", "Sade Sati — Saturnus' grote cycli, gedateerd", "Vimshottari Dasha — de grote perioden van je leven", "De komende tien jaar, periode voor periode", "Carrière, relaties en huwelijk", "Krachten, uitdagingen en levensdoel", "Traditionele remedies voor jou gekozen", "Een persoonlijke slotbrief"],
     },
     faq: {
       title: "Veelgestelde vragen",
       items: [
-        { q: "Is dit door AI gegenereerd?", a: "Nee. Elke horoscoop wordt met de hand berekend en geschreven door ervaren geleerden. Geen software-interpretaties, geen AI." },
+        { q: "Hoe wordt mijn horoscoop voorbereid?", a: "Individueel, op basis van je exacte geboortegegevens en volgens de klassieke teksten van de Jyotish-traditie. Geen twee lezingen zijn gelijk." },
         { q: "Hoe lang duurt het?", a: "Je rapport wordt binnen 24 uur na betalingsbevestiging geleverd." },
         { q: "Wat als ik mijn geboortetijd niet weet?", a: "Vermeld het in het formulier — we beoordelen je geval individueel. De ascendant verandert elke twee uur; we kunnen vanuit je maankaart werken of rectificatie bespreken." },
         { q: "Hoe betaal ik?", a: "Na het versturen van het formulier mailen we je een veilige PayPal-betaallink. Op deze site wordt niets afgerekend." },
@@ -69,7 +69,7 @@ export const ASTRO_EXTRA: Partial<Record<Locale, AstroContent>> = {
     },
     cta: {
       title: "Je horoscoop wacht al sinds het moment van je geboorte.",
-      body: "Laat onze geleerden hem voor je lezen — diepgaand, persoonlijk, met de hand.",
+      body: "Een diepgaande, persoonlijke lezing in de authentieke Vedische traditie.",
       button: "Bestel mijn Vedische horoscoop",
     },
     form: {
@@ -81,18 +81,18 @@ export const ASTRO_EXTRA: Partial<Record<Locale, AstroContent>> = {
       consent: "Ik ga akkoord met de verwerking van mijn gegevens voor mijn horoscoop. Zie het privacybeleid.",
       submit: "Vraag mijn horoscoop aan", sending: "Versturen…", error: "Er ging iets mis — probeer opnieuw.",
       thanksTitle: "Dank je.",
-      thanksBody: "Je gegevens zijn ontvangen. Binnen enkele uren ontvang je per e-mail een veilige PayPal-betaallink. Na betalingsbevestiging beginnen onze geleerden aan je persoonlijke horoscoop. Levering: binnen 24 uur na betaling.",
+      thanksBody: "Je gegevens zijn ontvangen. Binnen enkele uren ontvang je per e-mail een veilige PayPal-betaallink. Na betalingsbevestiging begint de voorbereiding van je persoonlijke horoscoop. Levering: binnen 24 uur na betaling.",
     },
   },
   de: {
     hero: {
       eyebrow: "Authentisches Jyotish · Seit undenklichen Zeiten",
       title: "Der Himmel erinnerte sich an den Moment deiner Geburt",
-      subtitle: "Eine persönliche Geburtshoroskop-Analyse, vollständig von Hand erstellt von erfahrenen Gelehrten der vedischen Astrologie — geliefert innerhalb von 24 Stunden nach Zahlung.",
+      subtitle: "Eine persönliche Geburtshoroskop-Analyse in der authentischen Jyotish-Tradition — geliefert innerhalb von 24 Stunden nach Zahlung.",
       cta: "Mein Horoskop bestellen",
       secondary: "So funktioniert es",
     },
-    heroTrust: ["Erstellt von erfahrenen Jyotish-Gelehrten", "Keine KI-Berichte", "Authentische vedische Tradition", "Privat & vertraulich", "Lieferung in 24 Stunden"],
+    heroTrust: ["Authentische vedische Tradition", "Jede Deutung individuell erstellt", "Privat & vertraulich", "Lieferung in 24 Stunden"],
     intro: {
       kicker: "Was ist vedische Astrologie?",
       title: "Die Wissenschaft des Lichts, älter als die Geschichte.",
@@ -116,9 +116,9 @@ export const ASTRO_EXTRA: Partial<Record<Locale, AstroContent>> = {
       title: "Warum Tulsi",
       items: [
         { title: "Authentische Tradition", body: "Analyse verwurzelt in den klassischen Texten — Brihat Parashara Hora Shastra, Phala Dipika, Brihat Jataka — zitiert in deinem Report." },
-        { title: "100% menschliche Analyse", body: "Jedes Horoskop wird von erfahrenen Jyotish-Gelehrten von Hand berechnet und gedeutet. Niemals von Software oder KI." },
-        { title: "Jahrzehnte der Erfahrung", body: "Unsere Gelehrten studieren und praktizieren die vedische Astrologie seit Jahrzehnten in ihrer lebendigen Tradition." },
-        { title: "Wahrhaft persönlich", body: "Keine Vorlagen. Dein Report wird für dich und über dich geschrieben — mit einem persönlichen Brief deines Astrologen." },
+        { title: "Jedes Horoskop ist einzigartig", body: "Deine Deutung wird speziell aus deinen exakten Geburtsdaten erstellt — niemals aus einer Vorlage." },
+        { title: "Eine lebendige Tradition", body: "Jyotish begleitet Suchende seit Jahrtausenden; jede Tulsi-Deutung arbeitet in dieser ununterbrochenen Tradition." },
+        { title: "Wahrhaft persönlich", body: "Keine Vorlagen. Dein Report wird für dich und über dich geschrieben — bis hin zum persönlichen Schlussbrief." },
         { title: "Lieferung in 24 Stunden", body: "Dein vollständiger Report kommt als PDF per E-Mail innerhalb von 24 Stunden nach Zahlungsbestätigung." },
         { title: "Völlig vertraulich", body: "Deine Geburtsdaten und deine Deutung bleiben streng privat, immer." },
       ],
@@ -128,19 +128,19 @@ export const ASTRO_EXTRA: Partial<Record<Locale, AstroContent>> = {
       steps: [
         { title: "Teile deine Geburtsdaten", body: "Fülle das Formular mit Datum, exakter Uhrzeit und Geburtsort aus. Zwei Minuten." },
         { title: "Erhalte deinen Zahlungslink", body: "Innerhalb weniger Stunden senden wir dir per E-Mail einen sicheren PayPal-Zahlungslink." },
-        { title: "Unsere Gelehrten beginnen", body: "Nach Zahlungsbestätigung wird dein Horoskop vollständig von Hand berechnet und gedeutet." },
+        { title: "Deine Deutung wird erstellt", body: "Nach Zahlungsbestätigung wird deine vollständige Deutung aus deinen exakten Geburtsdaten erstellt." },
         { title: "Erhalte deinen Report", body: "Innerhalb von 24 Stunden landet dein persönliches Horoskop als PDF in deinem Postfach." },
       ],
     },
     receive: {
       title: "Was du erhältst",
       note: "Eine vollständige Life-Management-Lesung — üblicherweise 15–25 Seiten, im klassischen Stil.",
-      items: ["Dein Aszendent (Lagna) — mit klassischen Zitaten", "Dein Mondzeichen und seine Würden", "Dein Nakshatra (Geburtsstern), Gottheit und Symbol", "Alle neun Planeten, Haus für Haus", "Deine Planetenkombinationen (Yogas)", "Sade Sati — Saturns große Zyklen, datiert", "Vimshottari Dasha — die großen Perioden deines Lebens", "Die nächsten zehn Jahre, Periode für Periode", "Beruf, Beziehungen und Ehe", "Stärken, Herausforderungen und Lebenszweck", "Traditionelle Heilmittel, für dich gewählt", "Ein persönlicher Brief deines Astrologen"],
+      items: ["Dein Aszendent (Lagna) — mit klassischen Zitaten", "Dein Mondzeichen und seine Würden", "Dein Nakshatra (Geburtsstern), Gottheit und Symbol", "Alle neun Planeten, Haus für Haus", "Deine Planetenkombinationen (Yogas)", "Sade Sati — Saturns große Zyklen, datiert", "Vimshottari Dasha — die großen Perioden deines Lebens", "Die nächsten zehn Jahre, Periode für Periode", "Beruf, Beziehungen und Ehe", "Stärken, Herausforderungen und Lebenszweck", "Traditionelle Heilmittel, für dich gewählt", "Ein persönlicher Schlussbrief"],
     },
     faq: {
       title: "Häufige Fragen",
       items: [
-        { q: "Wird das von KI generiert?", a: "Nein. Jedes Horoskop wird von erfahrenen Gelehrten von Hand berechnet und geschrieben. Keine Software-Deutungen, keine KI." },
+        { q: "Wie wird mein Horoskop erstellt?", a: "Individuell, aus deinen exakten Geburtsdaten und nach den klassischen Texten der Jyotish-Tradition. Keine zwei Deutungen gleichen sich." },
         { q: "Wie lange dauert es?", a: "Dein Report wird innerhalb von 24 Stunden nach Zahlungsbestätigung geliefert." },
         { q: "Was, wenn ich meine Geburtszeit nicht kenne?", a: "Vermerke es im Formular — wir prüfen deinen Fall individuell. Der Aszendent wechselt alle zwei Stunden; wir arbeiten ggf. von der Mondkarte aus oder besprechen eine Rektifikation." },
         { q: "Wie bezahle ich?", a: "Nach dem Absenden des Formulars mailen wir dir einen sicheren PayPal-Zahlungslink. Auf dieser Website wird nichts abgebucht." },
@@ -150,7 +150,7 @@ export const ASTRO_EXTRA: Partial<Record<Locale, AstroContent>> = {
     },
     cta: {
       title: "Dein Horoskop wartet seit dem Moment deiner Geburt.",
-      body: "Lass es unsere Gelehrten für dich lesen — tiefgründig, persönlich, von Hand.",
+      body: "Eine tiefgründige, persönliche Deutung in der authentischen vedischen Tradition.",
       button: "Mein vedisches Horoskop bestellen",
     },
     form: {
@@ -162,18 +162,18 @@ export const ASTRO_EXTRA: Partial<Record<Locale, AstroContent>> = {
       consent: "Ich stimme der Verarbeitung meiner Daten zur Erstellung meines Horoskops zu. Siehe Datenschutzerklärung.",
       submit: "Mein Horoskop anfordern", sending: "Wird gesendet…", error: "Etwas ging schief — bitte erneut versuchen.",
       thanksTitle: "Danke.",
-      thanksBody: "Deine Angaben sind eingegangen. Innerhalb weniger Stunden erhältst du per E-Mail einen sicheren PayPal-Zahlungslink. Nach Zahlungsbestätigung beginnen unsere Gelehrten mit deinem persönlichen Horoskop. Lieferung: innerhalb von 24 Stunden nach Zahlung.",
+      thanksBody: "Deine Angaben sind eingegangen. Innerhalb weniger Stunden erhältst du per E-Mail einen sicheren PayPal-Zahlungslink. Nach Zahlungsbestätigung beginnt die Erstellung deines persönlichen Horoskops. Lieferung: innerhalb von 24 Stunden nach Zahlung.",
     },
   },
   fr: {
     hero: {
       eyebrow: "Jyotish authentique · Depuis des temps immémoriaux",
       title: "Le ciel s'est souvenu de l'instant de votre naissance",
-      subtitle: "Une analyse personnalisée de votre thème natal, réalisée entièrement à la main par des érudits expérimentés en astrologie védique — livrée sous 24 heures après paiement.",
+      subtitle: "Une analyse personnalisée de votre thème natal dans l'authentique tradition du Jyotish — livrée sous 24 heures après paiement.",
       cta: "Commander mon horoscope",
       secondary: "Comment ça marche",
     },
-    heroTrust: ["Préparé par des érudits expérimentés du Jyotish", "Aucun rapport généré par IA", "Tradition védique authentique", "Privé & confidentiel", "Livré sous 24 heures"],
+    heroTrust: ["Tradition védique authentique", "Chaque lecture préparée individuellement", "Privé & confidentiel", "Livré sous 24 heures"],
     intro: {
       kicker: "Qu'est-ce que l'astrologie védique ?",
       title: "La science de la lumière, plus ancienne que l'histoire.",
@@ -197,9 +197,9 @@ export const ASTRO_EXTRA: Partial<Record<Locale, AstroContent>> = {
       title: "Pourquoi choisir Tulsi",
       items: [
         { title: "Tradition authentique", body: "Analyse enracinée dans les textes classiques — Brihat Parashara Hora Shastra, Phala Dipika, Brihat Jataka — cités dans votre rapport." },
-        { title: "Analyse 100% humaine", body: "Chaque thème est calculé et interprété à la main par des érudits expérimentés du Jyotish. Jamais par un logiciel ni une IA." },
-        { title: "Des décennies d'expérience", body: "Nos érudits étudient et pratiquent l'astrologie védique au sein de sa tradition vivante depuis des décennies." },
-        { title: "Véritablement personnel", body: "Aucun modèle. Votre rapport est écrit pour vous et sur vous — avec une lettre personnelle de votre astrologue." },
+        { title: "Chaque thème est unique", body: "Votre lecture est préparée spécifiquement à partir de vos données de naissance exactes — jamais à partir d'un modèle." },
+        { title: "Une tradition vivante", body: "Le Jyotish guide les chercheurs depuis des millénaires ; chaque lecture Tulsi s'inscrit dans cette tradition ininterrompue." },
+        { title: "Véritablement personnel", body: "Aucun modèle. Votre rapport est écrit pour vous et sur vous — jusqu'à sa lettre personnelle de clôture." },
         { title: "Livré sous 24 heures", body: "Votre rapport complet arrive en PDF par e-mail sous 24 heures après confirmation du paiement." },
         { title: "Totalement confidentiel", body: "Vos données de naissance et votre lecture restent strictement privées, toujours." },
       ],
@@ -209,19 +209,19 @@ export const ASTRO_EXTRA: Partial<Record<Locale, AstroContent>> = {
       steps: [
         { title: "Partagez vos données de naissance", body: "Remplissez le formulaire avec votre date, heure exacte et lieu de naissance. Deux minutes." },
         { title: "Recevez votre lien de paiement", body: "Sous quelques heures, nous vous envoyons par e-mail un lien de paiement PayPal sécurisé." },
-        { title: "Nos érudits commencent", body: "Paiement confirmé, votre thème est calculé et interprété entièrement à la main." },
+        { title: "Votre lecture est préparée", body: "Paiement confirmé, votre lecture complète est préparée à partir de vos données de naissance exactes." },
         { title: "Recevez votre rapport", body: "Sous 24 heures, votre horoscope personnalisé arrive en PDF dans votre boîte mail." },
       ],
     },
     receive: {
       title: "Ce que vous recevrez",
       note: "Une lecture complète de gestion de vie — généralement 15 à 25 pages, dans le style classique.",
-      items: ["Votre ascendant (Lagna) — avec citations classiques", "Votre signe lunaire et ses dignités", "Votre Nakshatra (étoile natale), divinité et symbole", "Les neuf planètes, maison par maison", "Vos combinaisons planétaires (Yogas)", "Sade Sati — les grands cycles de Saturne, datés", "Vimshottari Dasha — les grandes périodes de votre vie", "Les dix prochaines années, période par période", "Carrière, relations et mariage", "Forces, défis et but de vie", "Remèdes traditionnels choisis pour vous", "Une lettre personnelle de votre astrologue"],
+      items: ["Votre ascendant (Lagna) — avec citations classiques", "Votre signe lunaire et ses dignités", "Votre Nakshatra (étoile natale), divinité et symbole", "Les neuf planètes, maison par maison", "Vos combinaisons planétaires (Yogas)", "Sade Sati — les grands cycles de Saturne, datés", "Vimshottari Dasha — les grandes périodes de votre vie", "Les dix prochaines années, période par période", "Carrière, relations et mariage", "Forces, défis et but de vie", "Remèdes traditionnels choisis pour vous", "Une lettre personnelle de clôture"],
     },
     faq: {
       title: "Questions fréquentes",
       items: [
-        { q: "Est-ce généré par une IA ?", a: "Non. Chaque horoscope est calculé et écrit à la main par des érudits expérimentés. Aucune interprétation logicielle, aucune IA." },
+        { q: "Comment mon horoscope est-il préparé ?", a: "Individuellement, à partir de vos données de naissance exactes et selon les textes classiques de la tradition Jyotish. Il n'existe pas deux lectures identiques." },
         { q: "Combien de temps cela prend-il ?", a: "Votre rapport est livré sous 24 heures après confirmation du paiement." },
         { q: "Et si je ne connais pas mon heure de naissance ?", a: "Indiquez-le dans le formulaire — nous évaluons votre cas individuellement. L'ascendant change toutes les deux heures ; nous pouvons travailler depuis votre carte lunaire ou envisager une rectification." },
         { q: "Comment payer ?", a: "Après l'envoi du formulaire, nous vous envoyons par e-mail un lien de paiement PayPal sécurisé. Rien n'est débité sur ce site." },
@@ -231,7 +231,7 @@ export const ASTRO_EXTRA: Partial<Record<Locale, AstroContent>> = {
     },
     cta: {
       title: "Votre thème attend depuis l'instant de votre naissance.",
-      body: "Laissez nos érudits le lire pour vous — en profondeur, personnellement, à la main.",
+      body: "Une lecture profonde et personnelle dans l'authentique tradition védique.",
       button: "Commander mon horoscope védique",
     },
     form: {
@@ -243,18 +243,18 @@ export const ASTRO_EXTRA: Partial<Record<Locale, AstroContent>> = {
       consent: "J'accepte le traitement de mes données pour préparer mon horoscope. Voir la politique de confidentialité.",
       submit: "Demander mon horoscope", sending: "Envoi…", error: "Une erreur est survenue — réessayez.",
       thanksTitle: "Merci.",
-      thanksBody: "Vos informations ont bien été reçues. Sous quelques heures, vous recevrez par e-mail un lien de paiement PayPal sécurisé. Une fois le paiement confirmé, nos érudits commenceront votre horoscope personnalisé. Livraison : sous 24 heures après paiement.",
+      thanksBody: "Vos informations ont bien été reçues. Sous quelques heures, vous recevrez par e-mail un lien de paiement PayPal sécurisé. Une fois le paiement confirmé, la préparation de votre horoscope personnalisé commencera. Livraison : sous 24 heures après paiement.",
     },
   },
   it: {
     hero: {
       eyebrow: "Jyotish autentico · Da tempo immemorabile",
       title: "Il cielo ha ricordato il momento in cui sei nato",
-      subtitle: "Un'analisi personalizzata del tuo tema natale, elaborata interamente a mano da eruditi esperti di astrologia vedica — consegnata entro 24 ore dal pagamento.",
+      subtitle: "Un'analisi personalizzata del tuo tema natale nell'autentica tradizione del Jyotish — consegnata entro 24 ore dal pagamento.",
       cta: "Ordina il mio oroscopo",
       secondary: "Come funziona",
     },
-    heroTrust: ["Preparato da eruditi esperti di Jyotish", "Nessun rapporto generato dall'IA", "Tradizione vedica autentica", "Privato e riservato", "Consegna in 24 ore"],
+    heroTrust: ["Tradizione vedica autentica", "Ogni lettura preparata individualmente", "Privato e riservato", "Consegna in 24 ore"],
     intro: {
       kicker: "Cos'è l'astrologia vedica?",
       title: "La scienza della luce, più antica della storia.",
@@ -278,9 +278,9 @@ export const ASTRO_EXTRA: Partial<Record<Locale, AstroContent>> = {
       title: "Perché scegliere Tulsi",
       items: [
         { title: "Tradizione autentica", body: "Analisi radicata nei testi classici — Brihat Parashara Hora Shastra, Phala Dipika, Brihat Jataka — citati nel tuo rapporto." },
-        { title: "Analisi 100% umana", body: "Ogni tema è calcolato e interpretato a mano da eruditi esperti di Jyotish. Mai da software né IA." },
-        { title: "Decenni di esperienza", body: "I nostri eruditi studiano e praticano l'astrologia vedica nella sua tradizione vivente da decenni." },
-        { title: "Davvero personale", body: "Nessun modello. Il tuo rapporto è scritto per te e su di te — con una lettera personale del tuo astrologo." },
+        { title: "Ogni tema è unico", body: "La tua lettura è preparata specificamente dai tuoi dati di nascita esatti — mai da un modello." },
+        { title: "Una tradizione vivente", body: "Il Jyotish guida i cercatori da millenni; ogni lettura Tulsi opera in quella tradizione ininterrotta." },
+        { title: "Davvero personale", body: "Nessun modello. Il tuo rapporto è scritto per te e su di te — fino alla lettera personale di chiusura." },
         { title: "Consegna in 24 ore", body: "Il tuo rapporto completo arriva in PDF via email entro 24 ore dalla conferma del pagamento." },
         { title: "Totalmente riservato", body: "I tuoi dati di nascita e la tua lettura restano strettamente privati, sempre." },
       ],
@@ -290,19 +290,19 @@ export const ASTRO_EXTRA: Partial<Record<Locale, AstroContent>> = {
       steps: [
         { title: "Condividi i tuoi dati di nascita", body: "Compila il modulo con data, ora esatta e luogo di nascita. Due minuti." },
         { title: "Ricevi il link di pagamento", body: "Entro poche ore ti inviamo via email un link di pagamento PayPal sicuro." },
-        { title: "I nostri eruditi iniziano", body: "Confermato il pagamento, il tuo tema viene calcolato e interpretato interamente a mano." },
+        { title: "La tua lettura viene preparata", body: "Confermato il pagamento, la tua lettura completa viene preparata dai tuoi dati di nascita esatti." },
         { title: "Ricevi il tuo rapporto", body: "Entro 24 ore, il tuo oroscopo personalizzato arriva in PDF nella tua casella." },
       ],
     },
     receive: {
       title: "Cosa riceverai",
       note: "Una lettura completa di gestione della vita — di norma 15–25 pagine, in stile classico.",
-      items: ["Il tuo ascendente (Lagna) — con citazioni classiche", "Il tuo segno lunare e le sue dignità", "Il tuo Nakshatra (stella natale), divinità e simbolo", "I nove pianeti, casa per casa", "Le tue combinazioni planetarie (Yoga)", "Sade Sati — i grandi cicli di Saturno, datati", "Vimshottari Dasha — i grandi periodi della tua vita", "I prossimi dieci anni, periodo per periodo", "Carriera, relazioni e matrimonio", "Punti di forza, sfide e scopo di vita", "Rimedi tradizionali scelti per te", "Una lettera personale del tuo astrologo"],
+      items: ["Il tuo ascendente (Lagna) — con citazioni classiche", "Il tuo segno lunare e le sue dignità", "Il tuo Nakshatra (stella natale), divinità e simbolo", "I nove pianeti, casa per casa", "Le tue combinazioni planetarie (Yoga)", "Sade Sati — i grandi cicli di Saturno, datati", "Vimshottari Dasha — i grandi periodi della tua vita", "I prossimi dieci anni, periodo per periodo", "Carriera, relazioni e matrimonio", "Punti di forza, sfide e scopo di vita", "Rimedi tradizionali scelti per te", "Una lettera personale di chiusura"],
     },
     faq: {
       title: "Domande frequenti",
       items: [
-        { q: "È generato dall'IA?", a: "No. Ogni oroscopo è calcolato e scritto a mano da eruditi esperti. Nessuna interpretazione software, nessuna IA." },
+        { q: "Come viene preparato il mio oroscopo?", a: "Individualmente, dai tuoi dati di nascita esatti e secondo i testi classici della tradizione Jyotish. Non esistono due letture uguali." },
         { q: "Quanto tempo richiede?", a: "Il rapporto è consegnato entro 24 ore dalla conferma del pagamento." },
         { q: "E se non conosco la mia ora di nascita?", a: "Indicalo nel modulo — valutiamo il tuo caso individualmente. L'ascendente cambia ogni due ore; possiamo lavorare dalla carta lunare o valutare una rettifica." },
         { q: "Come pago?", a: "Dopo l'invio del modulo ti mandiamo via email un link di pagamento PayPal sicuro. Su questo sito non viene addebitato nulla." },
@@ -312,7 +312,7 @@ export const ASTRO_EXTRA: Partial<Record<Locale, AstroContent>> = {
     },
     cta: {
       title: "Il tuo tema aspetta dal momento in cui sei nato.",
-      body: "Lascia che i nostri eruditi lo leggano per te — in profondità, personalmente, a mano.",
+      body: "Una lettura profonda e personale nell'autentica tradizione vedica.",
       button: "Ordina il mio oroscopo vedico",
     },
     form: {
@@ -324,7 +324,7 @@ export const ASTRO_EXTRA: Partial<Record<Locale, AstroContent>> = {
       consent: "Accetto il trattamento dei miei dati per preparare il mio oroscopo. Vedi l'informativa privacy.",
       submit: "Richiedi il mio oroscopo", sending: "Invio…", error: "Qualcosa è andato storto — riprova.",
       thanksTitle: "Grazie.",
-      thanksBody: "Le tue informazioni sono state ricevute. Entro poche ore riceverai via email un link di pagamento PayPal sicuro. Confermato il pagamento, i nostri eruditi inizieranno il tuo oroscopo personalizzato. Consegna: entro 24 ore dal pagamento.",
+      thanksBody: "Le tue informazioni sono state ricevute. Entro poche ore riceverai via email un link di pagamento PayPal sicuro. Confermato il pagamento, inizierà la preparazione del tuo oroscopo personalizzato. Consegna: entro 24 ore dal pagamento.",
     },
   },
 };

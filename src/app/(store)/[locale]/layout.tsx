@@ -32,7 +32,7 @@ export async function generateMetadata({
       template: "%s — Tulsi Vedic Astrology",
     },
     description:
-      "Professional Jyotish: personalized Vedic horoscope and birth chart analysis prepared by hand by experienced Vedic astrology scholars. Delivered within 24 hours.",
+      "Professional Jyotish: personalized Vedic horoscope and birth chart analysis in the authentic tradition. Delivered within 24 hours.",
     keywords: [
       "vedic astrology", "vedic horoscope", "jyotish", "birth chart", "natal chart",
       "vedic astrologer", "online horoscope", "vedic birth chart reading", "professional jyotish",
