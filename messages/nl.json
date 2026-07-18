@@ -1,62 +1,20 @@
 {
   "nav": {
-    "shop": "Shop",
-    "cart": "Winkelwagen",
-    "faq": "FAQ",
-    "about": "Waarom Tulsi"
-  },
-  "hero": {
-    "eyebrow": "Premium technologie voor elke dag",
-    "title": "Ontworpen om op te gaan in je leven.",
-    "subtitle": "Zorgvuldig geselecteerde technologie voor je huis, je reizen en alles daartussenin. Europese verzending, doordacht design, geen ruis.",
-    "cta": "Ontdek de collectie"
-  },
-  "home": {
-    "featured": "De collectie",
-    "categories": "Bekijk per categorie",
-    "promiseTitle": "Minder, maar beter.",
-    "promiseBody": "Elk product bij Tulsi doorstaat één test: zouden we het zelf op ons bureau, in ons huis, in onze tas houden? Zo niet, dan verkopen we het niet.",
-    "shipping": "Gratis verzending in de EU",
-    "shippingBody": "Op elke bestelling, geen minimum.",
-    "warranty": "2 jaar garantie",
-    "warrantyBody": "Europese consumentenbescherming, zonder gedoe.",
-    "returns": "30 dagen retour",
-    "returnsBody": "Van gedachten veranderd? Stuur het terug."
-  },
-  "product": {
-    "addToCart": "In winkelwagen",
-    "added": "Toegevoegd",
-    "inStock": "Op voorraad",
-    "outOfStock": "Uitverkocht",
-    "freeShipping": "Gratis verzending · Binnen 24u verzonden",
-    "backToShop": "Terug naar de shop",
-    "related": "Misschien vind je dit ook mooi",
-    "shipEU": "Gratis verzending uit ons EU-magazijn · 4–8 dagen",
-    "shipIntl": "Gratis verzending met tracking · 8–18 dagen"
-  },
-  "cart": {
-    "title": "Je winkelwagen",
-    "empty": "Je winkelwagen is leeg.",
-    "continue": "Verder winkelen",
-    "checkout": "Afrekenen",
-    "subtotal": "Subtotaal",
-    "remove": "Verwijderen",
-    "note": "Verzendkosten en btw worden bij het afrekenen berekend. We accepteren kaarten, Apple Pay, Google Pay, iDEAL, Bancontact en PayPal."
-  },
-  "order": {
-    "successTitle": "Bedankt.",
-    "successBody": "Je bestelling is bevestigd. Er is een bevestigingsmail onderweg en we sturen de trackinginformatie zodra je pakket verzonden is."
+    "order": "Bestel mijn horoscoop",
+    "how": "Hoe het werkt",
+    "why": "Waarom Tulsi",
+    "faq": "FAQ"
   },
   "footer": {
-    "tagline": "Premium technologie voor elke dag, verzonden door heel Europa.",
+    "tagline": "Authentieke Vedische astrologie. Persoonlijke geboortehoroscopen, met de hand opgesteld door ervaren Jyotish-geleerden.",
     "rights": "Alle rechten voorbehouden.",
     "privacy": "Privacy",
     "terms": "Voorwaarden",
-    "shipping": "Verzending & Retouren"
+    "contact": "Contact"
   },
   "notFound": {
     "title": "Deze pagina is verdwaald.",
     "body": "De pagina die je zoekt bestaat niet of is verplaatst.",
-    "cta": "Terug naar de shop"
+    "cta": "Terug naar home"
   }
 }

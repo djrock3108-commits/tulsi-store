@@ -1,12 +1,19 @@
 @import "tailwindcss";
 
+/* Tokens del design system "Tulsi" — ver design-system/MASTER.md */
 :root {
-  --background: #fafaf9;
-  --foreground: #111110;
-  --muted: #6f6e6a;
-  --line: #e7e5e2;
-  --accent: #111110;
-  --accent-foreground: #fafaf9;
+  --background: #faf6ee;
+  --foreground: #1b1a16;
+  --muted: #6e6857;
+  --line: #e7dfce;
+  --surface: #fffbf2;
+  --surface-2: #f1eadb;
+  --accent: #2e5339;
+  --accent-hover: #24422d;
+  --accent-foreground: #faf6ee;
+  --gold: #8f7434;
+  --gold-light: #cfa85e;
+  --error: #9c3b2e;
 }
 
 @theme inline {
@@ -14,9 +21,16 @@
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-line: var(--line);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
   --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
   --color-accent-foreground: var(--accent-foreground);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-error: var(--error);
   --font-sans: var(--font-geist-sans);
+  --font-serif: var(--font-fraunces);
   --font-mono: var(--font-geist-mono);
 }
 
@@ -29,8 +43,8 @@ body {
 }
 
 ::selection {
-  background: var(--foreground);
-  color: var(--background);
+  background: var(--accent);
+  color: var(--accent-foreground);
 }
 
 /* Entrance animation used across the storefront. Respects reduced motion. */

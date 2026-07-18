@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import LocaleSwitcher from "./LocaleSwitcher";
-import CartBadge from "./CartBadge";
 
 export default function Header() {
   const t = useTranslations("nav");
@@ -19,19 +18,21 @@ export default function Header() {
   }, []);
 
   const links = [
-    { href: "/products", label: t("shop") },
-    { href: "/#why", label: t("about") },
+    { href: "/#how", label: t("how") },
+    { href: "/#why", label: t("why") },
     { href: "/#faq", label: t("faq") },
   ];
 
   return (
     <header
       className={`sticky top-0 z-50 border-b transition-all duration-300 ${
-        scrolled ? "border-line bg-background/90 shadow-[0_1px_20px_rgba(0,0,0,0.04)] backdrop-blur-md" : "border-transparent bg-background/60 backdrop-blur-sm"
+        scrolled
+          ? "border-line bg-background/90 shadow-[0_1px_20px_rgba(27,26,22,0.05)] backdrop-blur-md"
+          : "border-transparent bg-background/60 backdrop-blur-sm"
       }`}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <Link href="/" className="text-lg font-semibold tracking-[0.25em]" onClick={() => setOpen(false)}>
+        <Link href="/" className="font-serif text-lg font-semibold tracking-[0.25em]" onClick={() => setOpen(false)}>
           TULSI
         </Link>
 
@@ -42,18 +43,23 @@ export default function Header() {
               {l.label}
             </Link>
           ))}
-          <Link href="/cart" className="flex items-center text-muted transition-colors hover:text-foreground">
-            {t("cart")}
-            <CartBadge />
-          </Link>
           <LocaleSwitcher />
+          <Link
+            href="/order"
+            className="rounded-full bg-accent px-6 py-2.5 text-sm font-medium text-accent-foreground transition-colors duration-200 hover:bg-accent-hover"
+          >
+            {t("order")}
+          </Link>
         </nav>
 
         {/* Móvil */}
-        <div className="flex items-center gap-5 md:hidden">
-          <Link href="/cart" className="flex items-center text-sm text-muted" onClick={() => setOpen(false)}>
-            {t("cart")}
-            <CartBadge />
+        <div className="flex items-center gap-4 md:hidden">
+          <Link
+            href="/order"
+            onClick={() => setOpen(false)}
+            className="rounded-full bg-accent px-4 py-2 text-xs font-medium text-accent-foreground"
+          >
+            {t("order")}
           </Link>
           <button
             aria-label="Menu"

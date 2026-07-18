@@ -1,12 +1,11 @@
 import type { Locale } from "@/i18n/routing";
 
 /**
- * Contenido legal por idioma. Versiones concisas y honestas para el
- * lanzamiento; ampliar con asesoría legal al activar el modo live
- * (añadir razón social y nº KVK cuando existan).
+ * Contenido legal de la plataforma de Astrología Védica (pivote 2026-07).
+ * Añadir razón social y nº KVK cuando existan.
  */
 
-export type LegalTopic = "privacy" | "terms" | "shipping-returns";
+export type LegalTopic = "privacy" | "terms";
 
 interface LegalDoc {
   title: string;
@@ -15,62 +14,68 @@ interface LegalDoc {
 
 type LegalEntry = Partial<Record<Locale, LegalDoc>> & { en: LegalDoc };
 
-export const LEGAL_TOPICS: LegalTopic[] = ["privacy", "terms", "shipping-returns"];
+export const LEGAL_TOPICS: LegalTopic[] = ["privacy", "terms"];
 
 export const LEGAL: Record<LegalTopic, LegalEntry> = {
   privacy: {
     en: {
       title: "Privacy Policy",
       paragraphs: [
-        "Tulsi.store processes only the data needed to fulfil your order: your name, shipping address and email. Payments are handled entirely by Stripe — we never see or store your card details.",
-        "Your order data is shared only with the logistics partner that ships your product, and is kept for as long as tax law requires. We do not sell or rent personal data to anyone.",
-        "We use privacy-friendly, cookie-less analytics to understand aggregate traffic. No advertising trackers, no cross-site profiles.",
-        "Under the GDPR you can request access, correction or deletion of your data at any time by writing to hello@tulsi.store. You may also lodge a complaint with your national data-protection authority.",
+        "Tulsi processes only the data needed to prepare your Vedic horoscope: your name, email address, date, time and place of birth, and any comments you choose to share. This is sensitive, personal information — we treat it that way.",
+        "Your birth data is shared exclusively with the astrologer preparing your reading, and with no one else. Your reading itself is strictly confidential and is delivered only to your email address.",
+        "Payments are handled entirely through PayPal via a payment link we send you — we never see or store payment details on this website.",
+        "We use privacy-friendly, cookie-less analytics for aggregate traffic only. No advertising trackers.",
+        "Under the GDPR you may request access, correction or deletion of your data at any time at hello@tulsi.store. You may also lodge a complaint with your data-protection authority.",
       ],
     },
     es: {
       title: "Política de Privacidad",
       paragraphs: [
-        "Tulsi.store trata únicamente los datos necesarios para completar tu pedido: nombre, dirección de envío y email. Los pagos los gestiona íntegramente Stripe — nunca vemos ni guardamos los datos de tu tarjeta.",
-        "Los datos del pedido se comparten solo con el socio logístico que envía tu producto, y se conservan el tiempo que exige la normativa fiscal. No vendemos ni cedemos datos personales a nadie.",
-        "Usamos analítica respetuosa con la privacidad y sin cookies para entender el tráfico agregado. Sin rastreadores publicitarios ni perfiles entre sitios.",
-        "Bajo el RGPD puedes solicitar acceso, corrección o eliminación de tus datos en cualquier momento escribiendo a hello@tulsi.store. También puedes reclamar ante tu autoridad de protección de datos.",
+        "Tulsi trata únicamente los datos necesarios para elaborar tu horóscopo védico: nombre, email, fecha, hora y lugar de nacimiento, y los comentarios que decidas compartir. Es información personal sensible — y la tratamos como tal.",
+        "Tus datos natales se comparten exclusivamente con el astrólogo que prepara tu lectura, y con nadie más. Tu lectura es estrictamente confidencial y se entrega solo a tu dirección de email.",
+        "Los pagos se gestionan íntegramente a través de PayPal mediante un enlace que te enviamos — en esta web nunca vemos ni guardamos datos de pago.",
+        "Usamos analítica sin cookies y respetuosa con la privacidad, solo para tráfico agregado. Sin rastreadores publicitarios.",
+        "Bajo el RGPD puedes solicitar acceso, corrección o eliminación de tus datos en cualquier momento en hello@tulsi.store. También puedes reclamar ante tu autoridad de protección de datos.",
       ],
     },
     nl: {
       title: "Privacybeleid",
       paragraphs: [
-        "Tulsi.store verwerkt alleen de gegevens die nodig zijn voor je bestelling: naam, verzendadres en e-mail. Betalingen verlopen volledig via Stripe — wij zien of bewaren je kaartgegevens nooit.",
-        "Je bestelgegevens worden alleen gedeeld met de logistieke partner die je product verzendt, en worden bewaard zolang de belastingwet dat vereist. We verkopen of verhuren geen persoonsgegevens.",
-        "We gebruiken privacyvriendelijke analytics zonder cookies. Geen advertentietrackers, geen profielen.",
-        "Onder de AVG kun je op elk moment inzage, correctie of verwijdering van je gegevens aanvragen via hello@tulsi.store. Je kunt ook een klacht indienen bij de Autoriteit Persoonsgegevens.",
+        "Tulsi verwerkt alleen de gegevens die nodig zijn voor je Vedische horoscoop: naam, e-mail, geboortedatum, -tijd en -plaats, en de opmerkingen die je deelt. Dit is gevoelige, persoonlijke informatie — en zo behandelen we die ook.",
+        "Je geboortegegevens worden uitsluitend gedeeld met de astroloog die je lezing voorbereidt, en met niemand anders. Je lezing is strikt vertrouwelijk en wordt alleen aan jouw e-mailadres geleverd.",
+        "Betalingen verlopen volledig via PayPal met een betaallink die we je sturen — op deze website zien of bewaren we nooit betaalgegevens.",
+        "We gebruiken privacyvriendelijke analytics zonder cookies, alleen voor geaggregeerd verkeer. Geen advertentietrackers.",
+        "Onder de AVG kun je op elk moment inzage, correctie of verwijdering van je gegevens aanvragen via hello@tulsi.store.",
       ],
     },
     de: {
       title: "Datenschutzerklärung",
       paragraphs: [
-        "Tulsi.store verarbeitet nur die Daten, die für deine Bestellung nötig sind: Name, Lieferadresse und E-Mail. Zahlungen laufen vollständig über Stripe — wir sehen oder speichern deine Kartendaten nie.",
-        "Bestelldaten werden nur mit dem Logistikpartner geteilt, der dein Produkt versendet, und so lange aufbewahrt, wie es das Steuerrecht verlangt. Wir verkaufen keine personenbezogenen Daten.",
-        "Wir nutzen datenschutzfreundliche Analytik ohne Cookies. Keine Werbetracker, keine Profile.",
-        "Nach der DSGVO kannst du jederzeit Auskunft, Berichtigung oder Löschung deiner Daten verlangen: hello@tulsi.store. Du kannst dich auch bei deiner Datenschutzbehörde beschweren.",
+        "Tulsi verarbeitet nur die Daten, die für dein vedisches Horoskop nötig sind: Name, E-Mail, Geburtsdatum, -zeit und -ort sowie deine Anmerkungen. Das sind sensible, persönliche Informationen — und so behandeln wir sie.",
+        "Deine Geburtsdaten werden ausschließlich mit dem Astrologen geteilt, der deine Deutung erstellt — mit niemandem sonst. Deine Deutung ist streng vertraulich und wird nur an deine E-Mail-Adresse geliefert.",
+        "Zahlungen laufen vollständig über PayPal per Zahlungslink — auf dieser Website sehen oder speichern wir niemals Zahlungsdaten.",
+        "Wir nutzen datenschutzfreundliche Analytik ohne Cookies, nur für aggregierten Traffic. Keine Werbetracker.",
+        "Nach der DSGVO kannst du jederzeit Auskunft, Berichtigung oder Löschung deiner Daten verlangen: hello@tulsi.store.",
       ],
     },
     fr: {
       title: "Politique de Confidentialité",
       paragraphs: [
-        "Tulsi.store ne traite que les données nécessaires à votre commande : nom, adresse de livraison et e-mail. Les paiements sont entièrement gérés par Stripe — nous ne voyons ni ne stockons jamais vos données bancaires.",
-        "Les données de commande ne sont partagées qu'avec le partenaire logistique qui expédie votre produit, et conservées le temps exigé par la loi fiscale. Nous ne vendons aucune donnée personnelle.",
-        "Nous utilisons une analytique respectueuse de la vie privée, sans cookies. Aucun traqueur publicitaire.",
-        "En vertu du RGPD, vous pouvez demander l'accès, la rectification ou la suppression de vos données à tout moment : hello@tulsi.store. Vous pouvez aussi saisir la CNIL.",
+        "Tulsi ne traite que les données nécessaires à votre horoscope védique : nom, e-mail, date, heure et lieu de naissance, et vos commentaires éventuels. Ce sont des informations personnelles sensibles — nous les traitons comme telles.",
+        "Vos données de naissance sont partagées exclusivement avec l'astrologue qui prépare votre lecture, et avec personne d'autre. Votre lecture est strictement confidentielle et n'est livrée qu'à votre adresse e-mail.",
+        "Les paiements sont gérés entièrement via PayPal par un lien de paiement — nous ne voyons ni ne stockons jamais de données de paiement sur ce site.",
+        "Nous utilisons une analytique sans cookies, uniquement pour le trafic agrégé. Aucun traqueur publicitaire.",
+        "En vertu du RGPD, vous pouvez demander l'accès, la rectification ou la suppression de vos données à tout moment : hello@tulsi.store.",
       ],
     },
     it: {
       title: "Informativa sulla Privacy",
       paragraphs: [
-        "Tulsi.store tratta solo i dati necessari per completare il tuo ordine: nome, indirizzo di spedizione ed email. I pagamenti sono gestiti interamente da Stripe — non vediamo né conserviamo mai i dati della tua carta.",
-        "I dati dell'ordine sono condivisi solo con il partner logistico che spedisce il prodotto e conservati per il tempo richiesto dalla normativa fiscale. Non vendiamo dati personali.",
-        "Utilizziamo analisi rispettose della privacy, senza cookie. Nessun tracker pubblicitario.",
-        "Ai sensi del GDPR puoi richiedere accesso, rettifica o cancellazione dei tuoi dati in qualsiasi momento: hello@tulsi.store. Puoi anche presentare reclamo al Garante.",
+        "Tulsi tratta solo i dati necessari per il tuo oroscopo vedico: nome, email, data, ora e luogo di nascita, e i commenti che condividi. Sono informazioni personali sensibili — e le trattiamo come tali.",
+        "I tuoi dati di nascita sono condivisi esclusivamente con l'astrologo che prepara la tua lettura, e con nessun altro. La tua lettura è strettamente riservata e viene consegnata solo al tuo indirizzo email.",
+        "I pagamenti sono gestiti interamente tramite PayPal con un link di pagamento — su questo sito non vediamo né conserviamo mai dati di pagamento.",
+        "Utilizziamo analisi senza cookie, solo per traffico aggregato. Nessun tracker pubblicitario.",
+        "Ai sensi del GDPR puoi richiedere accesso, rettifica o cancellazione dei tuoi dati in qualsiasi momento: hello@tulsi.store.",
       ],
     },
   },
@@ -78,123 +83,61 @@ export const LEGAL: Record<LegalTopic, LegalEntry> = {
     en: {
       title: "Terms & Conditions",
       paragraphs: [
-        "Tulsi.store sells premium everyday technology to consumers in the European Union. By placing an order you accept these terms.",
-        "Prices include VAT. Payment is processed by Stripe at checkout; your order is confirmed by email once payment succeeds.",
-        "All products carry the 2-year legal conformity warranty under EU consumer law. If a product is defective, contact hello@tulsi.store and we will repair, replace or refund it.",
-        "You have the right to withdraw from your purchase within 30 days of delivery, without giving a reason — see Shipping & Returns.",
-        "These terms are governed by Dutch law. Nothing in them limits your statutory rights as a consumer.",
+        "Tulsi provides personalized Vedic astrology readings, prepared by hand by experienced Jyotish scholars. By submitting a request you accept these terms.",
+        "The process: you submit your birth details; we email you a PayPal payment link; once payment is confirmed, our scholars prepare your reading; you receive it as a PDF by email within 24 hours of payment.",
+        "Because every reading is a fully personalized service created specifically for you, the EU right of withdrawal no longer applies once preparation of your reading has begun with your consent. If you wish to cancel before payment or before work has started, simply write to hello@tulsi.store — nothing is owed.",
+        "Important: a Vedic astrology reading offers traditional guidance and self-knowledge. It is not a substitute for professional medical, psychological, legal or financial advice, and no specific life outcome is guaranteed.",
+        "These terms are governed by Dutch law. Nothing in them limits your statutory rights.",
       ],
     },
     es: {
       title: "Términos y Condiciones",
       paragraphs: [
-        "Tulsi.store vende tecnología premium para el día a día a consumidores de la Unión Europea. Al hacer un pedido aceptas estas condiciones.",
-        "Los precios incluyen IVA. El pago se procesa mediante Stripe al finalizar la compra; el pedido se confirma por email cuando el pago se completa.",
-        "Todos los productos tienen la garantía legal de conformidad de 2 años del derecho de consumo europeo. Si un producto es defectuoso, escribe a hello@tulsi.store y lo repararemos, sustituiremos o reembolsaremos.",
-        "Tienes derecho a desistir de tu compra en los 30 días siguientes a la entrega, sin dar motivos — ver Envíos y Devoluciones.",
-        "Estas condiciones se rigen por el derecho neerlandés. Nada en ellas limita tus derechos legales como consumidor.",
+        "Tulsi ofrece lecturas personalizadas de astrología védica, elaboradas a mano por eruditos experimentados del Jyotish. Al enviar una solicitud aceptas estas condiciones.",
+        "El proceso: envías tus datos de nacimiento; te mandamos por email un enlace de pago de PayPal; confirmado el pago, nuestros eruditos preparan tu lectura; la recibes en PDF por email en menos de 24 horas tras el pago.",
+        "Al ser cada lectura un servicio totalmente personalizado creado específicamente para ti, el derecho de desistimiento de la UE deja de aplicarse una vez comenzada su elaboración con tu consentimiento. Si deseas cancelar antes del pago o antes de que empiece el trabajo, escribe a hello@tulsi.store — no se debe nada.",
+        "Importante: una lectura de astrología védica ofrece orientación tradicional y autoconocimiento. No sustituye el consejo profesional médico, psicológico, legal o financiero, y no se garantiza ningún resultado vital concreto.",
+        "Estas condiciones se rigen por el derecho neerlandés. Nada en ellas limita tus derechos legales.",
       ],
     },
     nl: {
       title: "Algemene Voorwaarden",
       paragraphs: [
-        "Tulsi.store verkoopt premium technologie aan consumenten in de Europese Unie. Door te bestellen accepteer je deze voorwaarden.",
-        "Prijzen zijn inclusief btw. Betaling verloopt via Stripe; je bestelling wordt per e-mail bevestigd zodra de betaling is gelukt.",
-        "Alle producten vallen onder de wettelijke conformiteitsgarantie van 2 jaar. Is een product defect, mail hello@tulsi.store en we repareren, vervangen of vergoeden het.",
-        "Je hebt het recht om binnen 30 dagen na levering zonder opgave van reden af te zien van je aankoop — zie Verzending & Retouren.",
-        "Op deze voorwaarden is Nederlands recht van toepassing. Niets hierin beperkt je wettelijke consumentenrechten.",
+        "Tulsi levert persoonlijke Vedische astrologielezingen, met de hand opgesteld door ervaren Jyotish-geleerden. Door een aanvraag in te dienen accepteer je deze voorwaarden.",
+        "Het proces: je stuurt je geboortegegevens; wij mailen je een PayPal-betaallink; na betalingsbevestiging bereiden onze geleerden je lezing voor; je ontvangt haar als PDF per e-mail binnen 24 uur na betaling.",
+        "Omdat elke lezing een volledig gepersonaliseerde dienst is, vervalt het EU-herroepingsrecht zodra de voorbereiding met jouw instemming is begonnen. Wil je annuleren vóór betaling of vóór aanvang van het werk, mail dan hello@tulsi.store — je bent niets verschuldigd.",
+        "Belangrijk: een Vedische lezing biedt traditionele begeleiding en zelfkennis. Zij vervangt geen professioneel medisch, psychologisch, juridisch of financieel advies, en er wordt geen specifieke levensuitkomst gegarandeerd.",
+        "Op deze voorwaarden is Nederlands recht van toepassing.",
       ],
     },
     de: {
       title: "Allgemeine Geschäftsbedingungen",
       paragraphs: [
-        "Tulsi.store verkauft Premium-Technologie an Verbraucher in der Europäischen Union. Mit deiner Bestellung akzeptierst du diese Bedingungen.",
-        "Preise inklusive MwSt. Die Zahlung erfolgt über Stripe; deine Bestellung wird nach erfolgreicher Zahlung per E-Mail bestätigt.",
-        "Alle Produkte haben die gesetzliche Gewährleistung von 2 Jahren. Bei einem Defekt schreibe an hello@tulsi.store — wir reparieren, ersetzen oder erstatten.",
-        "Du kannst innerhalb von 30 Tagen nach Lieferung ohne Angabe von Gründen vom Kauf zurücktreten — siehe Versand & Rückgabe.",
-        "Es gilt niederländisches Recht. Deine gesetzlichen Verbraucherrechte bleiben unberührt.",
+        "Tulsi bietet persönliche vedische Astrologie-Deutungen, von Hand erstellt von erfahrenen Jyotish-Gelehrten. Mit deiner Anfrage akzeptierst du diese Bedingungen.",
+        "Der Ablauf: du sendest deine Geburtsdaten; wir mailen dir einen PayPal-Zahlungslink; nach Zahlungsbestätigung erstellen unsere Gelehrten deine Deutung; du erhältst sie als PDF per E-Mail innerhalb von 24 Stunden nach Zahlung.",
+        "Da jede Deutung eine vollständig personalisierte Leistung ist, erlischt das EU-Widerrufsrecht, sobald die Erstellung mit deiner Zustimmung begonnen hat. Möchtest du vor Zahlung oder Arbeitsbeginn stornieren, schreibe an hello@tulsi.store — es entstehen keine Kosten.",
+        "Wichtig: Eine vedische Deutung bietet traditionelle Orientierung und Selbsterkenntnis. Sie ersetzt keine professionelle medizinische, psychologische, rechtliche oder finanzielle Beratung, und kein bestimmtes Lebensergebnis wird garantiert.",
+        "Es gilt niederländisches Recht.",
       ],
     },
     fr: {
       title: "Conditions Générales",
       paragraphs: [
-        "Tulsi.store vend de la technologie premium aux consommateurs de l'Union européenne. En commandant, vous acceptez ces conditions.",
-        "Les prix incluent la TVA. Le paiement est traité par Stripe ; votre commande est confirmée par e-mail dès que le paiement aboutit.",
-        "Tous les produits bénéficient de la garantie légale de conformité de 2 ans. En cas de défaut, écrivez à hello@tulsi.store — réparation, remplacement ou remboursement.",
-        "Vous disposez d'un droit de rétractation de 30 jours après livraison, sans motif — voir Livraison & Retours.",
-        "Ces conditions sont régies par le droit néerlandais. Vos droits légaux de consommateur restent intacts.",
+        "Tulsi propose des lectures personnalisées d'astrologie védique, réalisées à la main par des érudits expérimentés du Jyotish. En soumettant une demande, vous acceptez ces conditions.",
+        "Le processus : vous envoyez vos données de naissance ; nous vous adressons un lien de paiement PayPal ; une fois le paiement confirmé, nos érudits préparent votre lecture ; vous la recevez en PDF par e-mail sous 24 heures après paiement.",
+        "Chaque lecture étant un service entièrement personnalisé, le droit de rétractation de l'UE cesse de s'appliquer dès que la préparation a commencé avec votre accord. Pour annuler avant paiement ou avant le début du travail, écrivez à hello@tulsi.store — rien n'est dû.",
+        "Important : une lecture védique offre une orientation traditionnelle et une connaissance de soi. Elle ne remplace pas un avis professionnel médical, psychologique, juridique ou financier, et aucun résultat de vie spécifique n'est garanti.",
+        "Ces conditions sont régies par le droit néerlandais.",
       ],
     },
     it: {
       title: "Termini e Condizioni",
       paragraphs: [
-        "Tulsi.store vende tecnologia premium ai consumatori dell'Unione Europea. Effettuando un ordine accetti questi termini.",
-        "I prezzi includono l'IVA. Il pagamento è gestito da Stripe; l'ordine è confermato via email a pagamento riuscito.",
-        "Tutti i prodotti godono della garanzia legale di conformità di 2 anni. In caso di difetto scrivi a hello@tulsi.store — ripariamo, sostituiamo o rimborsiamo.",
-        "Hai diritto di recesso entro 30 giorni dalla consegna, senza motivazione — vedi Spedizioni e Resi.",
-        "Si applica il diritto olandese. I tuoi diritti di consumatore restano impregiudicati.",
-      ],
-    },
-  },
-  "shipping-returns": {
-    en: {
-      title: "Shipping & Returns",
-      paragraphs: [
-        "We ship across the European Union with free shipping on every order. Products stocked in our EU warehouses arrive in 4–8 working days; items shipped from our international warehouse take 8–18 working days. You receive a tracking link by email as soon as your order ships.",
-        "Returns: you have 30 days from delivery to return any product, no questions asked. Write to hello@tulsi.store with your order number and we'll send you instructions. The product should be unused and in its original packaging.",
-        "Refunds are issued to your original payment method within 14 days of us receiving the return.",
-        "Warranty: every product is covered by the 2-year EU legal conformity warranty. It covers manufacturing and functional defects — motor, battery, pump, electronics, seams — with repair, replacement or refund at no cost to you.",
-        "What the warranty does not cover: damage caused by use (drops, knocks, liquids on non-waterproof products), normal wear and tear, and products opened or modified. Transport damage: report it with photos within 48 hours of delivery and we resolve it immediately.",
-      ],
-    },
-    es: {
-      title: "Envíos y Devoluciones",
-      paragraphs: [
-        "Enviamos a toda la Unión Europea con envío gratis en todos los pedidos. Los productos con stock en nuestros almacenes europeos llegan en 4–8 días laborables; los enviados desde el almacén internacional tardan 8–18 días laborables. Recibirás el enlace de seguimiento por email en cuanto salga tu pedido.",
-        "Devoluciones: tienes 30 días desde la entrega para devolver cualquier producto, sin preguntas. Escribe a hello@tulsi.store con tu número de pedido y te enviaremos las instrucciones. El producto debe estar sin usar y en su embalaje original.",
-        "Los reembolsos se emiten a tu método de pago original en un máximo de 14 días desde que recibimos la devolución.",
-        "Garantía: todos los productos están cubiertos por la garantía legal europea de conformidad de 2 años. Cubre defectos de fabricación y funcionamiento — motor, batería, bomba, electrónica, costuras — con reparación, sustitución o reembolso sin coste.",
-        "Qué no cubre la garantía: daños causados por el uso (caídas, golpes, líquidos en productos no resistentes al agua), el desgaste normal, y productos abiertos o modificados. Daños de transporte: repórtalos con fotos en las 48 horas siguientes a la entrega y lo resolvemos de inmediato.",
-      ],
-    },
-    nl: {
-      title: "Verzending & Retouren",
-      paragraphs: [
-        "We verzenden door de hele EU, gratis bij elke bestelling. Producten uit onze Europese magazijnen komen in 4–8 werkdagen aan; items uit het internationale magazijn in 8–18 werkdagen. Je ontvangt een track & trace-link per e-mail zodra je bestelling onderweg is.",
-        "Retouren: je hebt 30 dagen na levering om elk product terug te sturen, zonder vragen. Mail hello@tulsi.store met je bestelnummer en we sturen instructies. Het product moet ongebruikt en in de originele verpakking zijn.",
-        "Terugbetalingen volgen binnen 14 dagen na ontvangst van de retour, via je oorspronkelijke betaalmethode.",
-        "Garantie: elk product valt onder de wettelijke EU-conformiteitsgarantie van 2 jaar. Deze dekt fabricage- en functionele defecten — motor, batterij, pomp, elektronica, naden — met gratis reparatie, vervanging of terugbetaling.",
-        "Wat de garantie niet dekt: schade door gebruik (vallen, stoten, vloeistoffen op niet-waterdichte producten), normale slijtage, en geopende of aangepaste producten. Transportschade: meld het met foto's binnen 48 uur na levering en we lossen het direct op.",
-      ],
-    },
-    de: {
-      title: "Versand & Rückgabe",
-      paragraphs: [
-        "Wir versenden EU-weit kostenlos. Produkte aus unseren EU-Lagern kommen in 4–8 Werktagen an; Artikel aus dem internationalen Lager in 8–18 Werktagen. Den Sendungsverfolgungslink erhältst du per E-Mail, sobald deine Bestellung unterwegs ist.",
-        "Rückgabe: 30 Tage ab Lieferung, ohne Fragen. Schreibe an hello@tulsi.store mit deiner Bestellnummer und du erhältst die Anleitung. Das Produkt sollte unbenutzt und originalverpackt sein.",
-        "Erstattungen erfolgen innerhalb von 14 Tagen nach Eingang der Rücksendung auf dein ursprüngliches Zahlungsmittel.",
-        "Garantie: Jedes Produkt hat die gesetzliche EU-Gewährleistung von 2 Jahren. Sie deckt Herstellungs- und Funktionsfehler — Motor, Akku, Pumpe, Elektronik, Nähte — mit kostenloser Reparatur, Ersatz oder Erstattung.",
-        "Nicht abgedeckt: Schäden durch Gebrauch (Stürze, Stöße, Flüssigkeiten bei nicht wasserdichten Produkten), normale Abnutzung sowie geöffnete oder veränderte Produkte. Transportschäden: mit Fotos innerhalb von 48 Stunden nach Lieferung melden — wir lösen es sofort.",
-      ],
-    },
-    fr: {
-      title: "Livraison & Retours",
-      paragraphs: [
-        "Nous livrons dans toute l'UE, gratuitement sur chaque commande. Les produits stockés dans nos entrepôts européens arrivent en 4–8 jours ouvrés ; ceux expédiés de l'entrepôt international en 8–18 jours ouvrés. Vous recevez un lien de suivi par e-mail dès l'expédition.",
-        "Retours : 30 jours après livraison, sans justification. Écrivez à hello@tulsi.store avec votre numéro de commande et nous vous enverrons les instructions. Le produit doit être inutilisé, dans son emballage d'origine.",
-        "Les remboursements sont effectués sous 14 jours après réception du retour, sur votre moyen de paiement initial.",
-        "Garantie : chaque produit est couvert par la garantie légale européenne de conformité de 2 ans. Elle couvre les défauts de fabrication et de fonctionnement — moteur, batterie, pompe, électronique, coutures — avec réparation, remplacement ou remboursement sans frais.",
-        "Ce que la garantie ne couvre pas : les dommages liés à l'usage (chutes, chocs, liquides sur produits non étanches), l'usure normale, et les produits ouverts ou modifiés. Dommages de transport : signalez-les avec photos sous 48 heures après livraison, nous réglons cela immédiatement.",
-      ],
-    },
-    it: {
-      title: "Spedizioni e Resi",
-      paragraphs: [
-        "Spediamo in tutta l'UE, gratuitamente su ogni ordine. I prodotti nei nostri magazzini europei arrivano in 4–8 giorni lavorativi; quelli dal magazzino internazionale in 8–18 giorni lavorativi. Riceverai il link di tracciamento via email alla spedizione.",
-        "Resi: 30 giorni dalla consegna, senza domande. Scrivi a hello@tulsi.store con il numero d'ordine e ti invieremo le istruzioni. Il prodotto deve essere inutilizzato e nella confezione originale.",
-        "I rimborsi avvengono entro 14 giorni dal ricevimento del reso, sul metodo di pagamento originale.",
-        "Garanzia: ogni prodotto è coperto dalla garanzia legale europea di conformità di 2 anni. Copre i difetti di fabbricazione e funzionamento — motore, batteria, pompa, elettronica, cuciture — con riparazione, sostituzione o rimborso senza costi.",
-        "Cosa non copre la garanzia: danni causati dall'uso (cadute, urti, liquidi su prodotti non impermeabili), la normale usura, e prodotti aperti o modificati. Danni da trasporto: segnalali con foto entro 48 ore dalla consegna e risolviamo subito.",
+        "Tulsi offre letture personalizzate di astrologia vedica, elaborate a mano da eruditi esperti di Jyotish. Inviando una richiesta accetti questi termini.",
+        "Il processo: invii i tuoi dati di nascita; ti mandiamo via email un link di pagamento PayPal; confermato il pagamento, i nostri eruditi preparano la tua lettura; la ricevi in PDF via email entro 24 ore dal pagamento.",
+        "Essendo ogni lettura un servizio interamente personalizzato, il diritto di recesso UE cessa di applicarsi una volta iniziata la preparazione con il tuo consenso. Per annullare prima del pagamento o dell'inizio del lavoro, scrivi a hello@tulsi.store — nulla è dovuto.",
+        "Importante: una lettura vedica offre orientamento tradizionale e conoscenza di sé. Non sostituisce il parere professionale medico, psicologico, legale o finanziario, e nessun esito di vita specifico è garantito.",
+        "Si applica il diritto olandese.",
       ],
     },
   },

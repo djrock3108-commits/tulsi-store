@@ -32,9 +32,9 @@ export default async function LegalPage({
   const doc = entry[locale as Locale] ?? entry.en;
 
   return (
-    <div className="mx-auto max-w-2xl px-6 py-20">
-      <h1 className="text-3xl font-semibold tracking-tight">{doc.title}</h1>
-      <div className="mt-8 space-y-5">
+    <div className="mx-auto max-w-2xl px-6 py-20 md:py-28">
+      <h1 className="font-serif text-3xl font-medium tracking-tight md:text-4xl">{doc.title}</h1>
+      <div className="mt-10 space-y-5">
         {doc.paragraphs.map((p, i) => (
           <p key={i} className="text-pretty text-sm leading-relaxed text-muted">
             {p}

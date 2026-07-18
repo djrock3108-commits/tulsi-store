@@ -4,6 +4,16 @@ _Última actualización: 2026-07-11_
 
 ## Estado global
 
+**PIVOTE TOTAL (2026-07-12) — PLATAFORMA DE ASTROLOGÍA VÉDICA EN VIVO.** Tulsi dejó de ser
+tienda: ahora vende un único servicio, el Horóscopo Védico Personalizado elaborado a mano
+por eruditos (estilo Bhrigu Project; base erudita en docs/JYOTISH_KNOWLEDGE.md). Home
+editorial nueva (crema/verde/dorado, serif Fraunces), formulario /order → HoroscopeRequest
+(PENDING→PAYMENT_SENT→PAID→IN_PROGRESS→COMPLETED), admin /admin/requests con acciones de
+estado, notas y export CSV; enlace PayPal SIEMPRE manual. Mantenimiento apagado. Verificado
+E2E en producción (solicitud de prueba → DB → visible en admin). E-commerce completo
+respaldado en la rama `shop-backup`. Pendiente nº1: RESEND_API_KEY para que los emails
+(aviso al admin + confirmación al cliente) salgan de verdad — hoy quedan en /admin/logs.
+
 **Rediseño editorial premium — EN VIVO (2026-07-12).** Home estilo editorial (hero collage,
 franja de confianza, bloques narrativos, mosaico de categorías, "Por qué Tulsi", FAQ,
 newsletter con consentimiento RGPD → tabla Subscriber), PDP con galería/relacionados/barra

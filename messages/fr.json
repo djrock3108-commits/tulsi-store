@@ -1,62 +1,20 @@
 {
   "nav": {
-    "shop": "Boutique",
-    "cart": "Panier",
-    "faq": "FAQ",
-    "about": "Pourquoi Tulsi"
-  },
-  "hero": {
-    "eyebrow": "Technologie premium du quotidien",
-    "title": "Conçue pour se fondre dans votre vie.",
-    "subtitle": "Une technologie soigneusement sélectionnée pour votre maison, vos voyages et tout le reste. Livraison européenne, design réfléchi, sans bruit.",
-    "cta": "Explorer la collection"
-  },
-  "home": {
-    "featured": "La collection",
-    "categories": "Parcourir par catégorie",
-    "promiseTitle": "Moins, mais mieux.",
-    "promiseBody": "Chaque produit Tulsi passe un test : le garderions-nous sur notre bureau, chez nous, dans notre sac ? Sinon, nous ne le vendons pas.",
-    "shipping": "Livraison UE offerte",
-    "shippingBody": "Sur chaque commande, sans minimum.",
-    "warranty": "Garantie 2 ans",
-    "warrantyBody": "Protection européenne du consommateur, sans friction.",
-    "returns": "Retours sous 30 jours",
-    "returnsBody": "Vous avez changé d'avis ? Renvoyez-le."
-  },
-  "product": {
-    "addToCart": "Ajouter au panier",
-    "added": "Ajouté au panier",
-    "inStock": "En stock",
-    "outOfStock": "Épuisé",
-    "freeShipping": "Livraison offerte · Expédié sous 24h",
-    "backToShop": "Retour à la boutique",
-    "related": "Vous aimerez peut-être aussi",
-    "shipEU": "Livraison offerte depuis notre entrepôt UE · 4–8 jours",
-    "shipIntl": "Livraison offerte avec suivi · 8–18 jours"
-  },
-  "cart": {
-    "title": "Votre panier",
-    "empty": "Votre panier est vide.",
-    "continue": "Continuer vos achats",
-    "checkout": "Commander",
-    "subtotal": "Sous-total",
-    "remove": "Retirer",
-    "note": "Livraison et taxes calculées au paiement. Nous acceptons cartes, Apple Pay, Google Pay, iDEAL, Bancontact et PayPal."
-  },
-  "order": {
-    "successTitle": "Merci.",
-    "successBody": "Votre commande est confirmée. Un e-mail de confirmation arrive, et nous vous enverrons le suivi dès l'expédition."
+    "order": "Commander mon horoscope",
+    "how": "Comment ça marche",
+    "why": "Pourquoi Tulsi",
+    "faq": "FAQ"
   },
   "footer": {
-    "tagline": "Technologie premium du quotidien, expédiée dans toute l'Europe.",
+    "tagline": "Astrologie védique authentique. Thèmes nataux personnalisés, réalisés à la main par des érudits du Jyotish.",
     "rights": "Tous droits réservés.",
     "privacy": "Confidentialité",
-    "terms": "CGV",
-    "shipping": "Livraison & Retours"
+    "terms": "Conditions",
+    "contact": "Contact"
   },
   "notFound": {
     "title": "Cette page s est égarée.",
     "body": "La page que vous cherchez n existe pas ou a été déplacée.",
-    "cta": "Retour à la boutique"
+    "cta": "Retour à l accueil"
   }
 }

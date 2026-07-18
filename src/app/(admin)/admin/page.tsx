@@ -1,97 +1,71 @@
+import Link from "next/link";
 import { getPrisma } from "@/lib/prisma";
-import { ADAPTERS } from "@/lib/suppliers/router";
 
 export const dynamic = "force-dynamic";
 
-function euro(cents: number): string {
-  return new Intl.NumberFormat("en-IE", { style: "currency", currency: "EUR" }).format(cents / 100);
-}
-
-async function getStats() {
-  const prisma = getPrisma();
-  if (!prisma) return null;
-  try {
-    const [orders, paidAgg, products, customers, pendingLegs] = await Promise.all([
-      prisma.order.count(),
-      prisma.order.aggregate({
-        where: { status: { notIn: ["PENDING_PAYMENT", "CANCELLED", "REFUNDED"] } },
-        _sum: { totalCents: true, subtotalCents: true },
-      }),
-      prisma.product.count({ where: { active: true } }),
-      prisma.order.groupBy({ by: ["email"] }).then((g) => g.length),
-      prisma.supplierOrder.count({ where: { status: "FAILED" } }),
-    ]);
-    // Profit estimate: paid revenue minus supplier cost of sold items.
-    const items = await prisma.orderItem.findMany({
-      where: { order: { status: { notIn: ["PENDING_PAYMENT", "CANCELLED", "REFUNDED"] } } },
-      include: { product: { select: { costCents: true } } },
-    });
-    const cost = items.reduce((s, i) => s + i.product.costCents * i.quantity, 0);
-    const revenue = paidAgg._sum.totalCents ?? 0;
-    return { orders, revenue, profit: revenue - cost, products, customers, pendingLegs };
-  } catch {
-    return null;
-  }
-}
+const STATUSES = ["PENDING", "PAYMENT_SENT", "PAID", "IN_PROGRESS", "COMPLETED", "CANCELLED"] as const;
 
 export default async function AdminDashboard() {
-  const stats = await getStats();
-  const apiStatus = [
-    { name: "PostgreSQL", ok: Boolean(process.env.DATABASE_URL) },
-    { name: "Stripe", ok: Boolean(process.env.STRIPE_SECRET_KEY && process.env.STRIPE_WEBHOOK_SECRET) },
-    { name: "BigBuy", ok: ADAPTERS.BIGBUY.isConfigured() },
-    { name: "CJdropshipping", ok: ADAPTERS.CJDROPSHIPPING.isConfigured() },
-    { name: "Email (Resend)", ok: Boolean(process.env.RESEND_API_KEY) },
-  ];
+  const prisma = getPrisma();
+  if (!prisma) return <p className="text-sm text-muted">No database connected.</p>;
 
-  const cards = stats
-    ? [
-        { label: "Revenue", value: euro(stats.revenue) },
-        { label: "Estimated profit", value: euro(stats.profit) },
-        { label: "Orders", value: String(stats.orders) },
-        { label: "Customers", value: String(stats.customers) },
-        { label: "Active products", value: String(stats.products) },
-        { label: "Failed supplier legs", value: String(stats.pendingLegs) },
-      ]
-    : [];
+  const [byStatus, total, subscribers, recent] = await Promise.all([
+    prisma.horoscopeRequest.groupBy({ by: ["status"], _count: true }),
+    prisma.horoscopeRequest.count(),
+    prisma.subscriber.count(),
+    prisma.horoscopeRequest.findMany({ orderBy: { createdAt: "desc" }, take: 5 }),
+  ]);
+  const count = (s: string) => byStatus.find((x) => x.status === s)?._count ?? 0;
 
   return (
     <div>
-      <h1 className="text-xl font-semibold tracking-tight">Dashboard</h1>
+      <h1 className="font-serif text-xl font-semibold tracking-tight">Dashboard</h1>
 
-      {!stats && (
-        <div className="mt-6 rounded-xl border border-amber-300 bg-amber-50 p-4 text-sm text-amber-900">
-          No database connected — set <code className="font-mono">DATABASE_URL</code> and run{" "}
-          <code className="font-mono">npx prisma migrate deploy && npx prisma db seed</code>. The
-          storefront is currently serving the seed catalog.
-        </div>
-      )}
-
-      {stats && (
-        <div className="mt-6 grid grid-cols-2 gap-4 lg:grid-cols-3">
-          {cards.map((c) => (
-            <div key={c.label} className="rounded-2xl border border-line bg-white p-6">
-              <p className="text-xs uppercase tracking-widest text-muted">{c.label}</p>
-              <p className="mt-2 text-2xl font-semibold">{c.value}</p>
-            </div>
-          ))}
-        </div>
-      )}
-
-      <h2 className="mt-10 text-sm font-medium">API status</h2>
-      <div className="mt-4 flex flex-wrap gap-3">
-        {apiStatus.map((api) => (
-          <span
-            key={api.name}
-            className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs ${
-              api.ok ? "border-emerald-300 bg-emerald-50 text-emerald-800" : "border-line bg-white text-muted"
-            }`}
-          >
-            <span className={`h-1.5 w-1.5 rounded-full ${api.ok ? "bg-emerald-500" : "bg-zinc-300"}`} />
-            {api.name} — {api.ok ? "configured" : "not configured"}
-          </span>
-        ))}
+      <div className="mt-6 grid grid-cols-2 gap-4 lg:grid-cols-4">
+        <Card label="Total requests" value={total} highlight={false} />
+        <Card label="⏳ Pending (send PayPal link!)" value={count("PENDING")} highlight={count("PENDING") > 0} />
+        <Card label="💳 Awaiting payment" value={count("PAYMENT_SENT")} highlight={false} />
+        <Card label="🕉 To prepare (paid)" value={count("PAID") + count("IN_PROGRESS")} highlight={count("PAID") > 0} />
+        <Card label="✅ Completed" value={count("COMPLETED")} highlight={false} />
+        <Card label="Newsletter subscribers" value={subscribers} highlight={false} />
       </div>
+
+      <h2 className="mt-10 text-sm font-medium">Latest requests</h2>
+      {recent.length === 0 ? (
+        <p className="mt-3 text-sm text-muted">No requests yet. They will appear here the moment a client submits the form.</p>
+      ) : (
+        <ul className="mt-3 space-y-2">
+          {recent.map((r) => (
+            <li key={r.id} className="rounded-xl border border-line bg-surface p-4 text-sm">
+              <span className="font-medium">{r.fullName}</span> · {r.email} · {r.birthDate}
+              {r.timeUnknown ? " (time unknown)" : ` ${r.birthTime}`} · {r.city}, {r.country} —{" "}
+              <span className="rounded-full bg-surface-2 px-2 py-0.5 text-xs">{r.status}</span>
+            </li>
+          ))}
+        </ul>
+      )}
+
+      <div className="mt-8 flex gap-3">
+        <Link href="/admin/requests" className="rounded-full bg-accent px-6 py-2.5 text-sm font-medium text-accent-foreground">
+          Manage requests →
+        </Link>
+        <a href="/api/admin/requests/export" className="rounded-full border border-line px-6 py-2.5 text-sm text-muted hover:border-accent hover:text-accent">
+          Export CSV
+        </a>
+      </div>
+
+      <p className="mt-10 text-xs text-muted">
+        Statuses: {STATUSES.join(" → ")}. Flow: send the PayPal link by email manually, then advance the status here.
+      </p>
+    </div>
+  );
+}
+
+function Card({ label, value, highlight }: { label: string; value: number; highlight: boolean }) {
+  return (
+    <div className={`rounded-2xl border p-6 ${highlight ? "border-gold bg-surface" : "border-line bg-surface"}`}>
+      <p className="text-xs uppercase tracking-widest text-muted">{label}</p>
+      <p className="mt-2 font-serif text-2xl font-semibold">{value}</p>
     </div>
   );
 }
