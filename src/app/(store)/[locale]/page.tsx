@@ -27,14 +27,14 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <section className="relative overflow-hidden">
         {/* Carta védica gigante al 4% — se siente antes de verse */}
         <div aria-hidden className="pointer-events-none absolute inset-0 flex items-center justify-center text-foreground">
-          <KundaliArt className="h-[880px] w-[880px] shrink-0 opacity-[0.045]" />
+          <KundaliArt className="manuscript-wheel h-[880px] w-[880px] shrink-0 opacity-[0.05]" />
         </div>
         <div aria-hidden className="pointer-events-none absolute inset-0 text-gold-light/40">
-          <span className="absolute left-[12%] top-[18%] text-xs">✦</span>
-          <span className="absolute right-[18%] top-[26%] text-[10px]">✦</span>
-          <span className="absolute left-[24%] top-[64%] text-[9px]">✦</span>
-          <span className="absolute right-[10%] top-[58%] text-sm">✦</span>
-          <span className="absolute left-[46%] top-[12%] text-[8px]">✦</span>
+          <span className="star-whisper absolute left-[12%] top-[18%] text-xs">✦</span>
+          <span className="star-whisper delay-star-1 absolute right-[18%] top-[26%] text-[10px]">✦</span>
+          <span className="star-whisper delay-star-2 absolute left-[24%] top-[64%] text-[9px]">✦</span>
+          <span className="star-whisper delay-star-3 absolute right-[10%] top-[58%] text-sm">✦</span>
+          <span className="star-whisper delay-star-4 absolute left-[46%] top-[12%] text-[8px]">✦</span>
         </div>
         <div className="relative mx-auto max-w-4xl px-6 pb-20 pt-24 text-center md:pb-28 md:pt-36">
           <p className="animate-fade-up text-xs uppercase tracking-[0.3em] text-gold">{c.hero.eyebrow}</p>
@@ -47,22 +47,22 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <div className="animate-fade-up delay-300 mt-12 flex flex-wrap justify-center gap-3">
             <Link
               href="/order"
-              className="rounded-full bg-accent px-10 py-4 text-sm font-medium text-accent-foreground transition-colors duration-200 hover:bg-accent-hover active:scale-[0.98]"
+              className="premium-button rounded-full bg-accent px-10 py-4 text-sm font-medium text-accent-foreground"
             >
               {c.hero.cta}
             </Link>
             <Link
               href="/#how"
-              className="rounded-full border border-line px-10 py-4 text-sm transition-colors duration-200 hover:border-accent hover:text-accent"
+              className="premium-button rounded-full border border-line px-10 py-4 text-sm hover:border-accent hover:text-accent"
             >
               {c.hero.secondary}
             </Link>
           </div>
           {/* Indicadores de confianza junto al CTA */}
-          <ul className="animate-fade-up delay-300 mx-auto mt-10 flex max-w-2xl flex-wrap items-center justify-center gap-x-5 gap-y-2">
+          <ul className="trust-ledger animate-fade-up delay-300 mx-auto mt-12 flex max-w-3xl flex-wrap items-center justify-center border-y border-line/80 py-4">
             {c.heroTrust.map((item) => (
-              <li key={item} className="flex items-center gap-2 text-[11px] tracking-wide text-muted">
-                <span className="text-[8px] text-gold">✦</span>
+              <li key={item} className="flex items-center px-4 py-1 text-[11px] tracking-wide text-muted">
+                <span aria-hidden className="mr-2 text-[7px] text-gold">✦</span>
                 {item}
               </li>
             ))}
@@ -71,8 +71,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </section>
 
       {/* ── Qué es la Astrología Védica ───────────────────────────── */}
-      <section id="what" className="border-y border-line bg-surface/70">
-        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-12 px-6 py-20 md:grid-cols-2 md:gap-16 md:py-28">
+      <section id="what" className="manuscript-section border-y border-line bg-surface/70">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-14 px-6 py-24 md:grid-cols-[1.08fr_0.92fr] md:gap-20 md:py-32">
           <Reveal>
             <p className="text-xs uppercase tracking-[0.3em] text-gold">{c.intro.kicker}</p>
             <h2 className="mt-5 text-balance font-serif text-3xl font-medium tracking-tight md:text-4xl">
@@ -84,8 +84,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               </p>
             ))}
           </Reveal>
-          <Reveal delay={120}>
-            <h3 className="font-serif text-xl font-medium">{c.intro.diffTitle}</h3>
+          <Reveal delay={120} className="md:border-l md:border-line md:pl-16">
+            <p aria-hidden className="mb-7 font-serif text-4xl leading-none text-gold/45">01</p>
+            <h3 className="font-serif text-2xl font-medium">{c.intro.diffTitle}</h3>
             <ul className="mt-6 space-y-4">
               {c.intro.diffs.map((d) => (
                 <li key={d.slice(0, 24)} className="flex items-start gap-3 text-sm leading-relaxed text-muted">
@@ -124,7 +125,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {c.why.items.map((item, i) => (
             <Reveal key={item.title} delay={i * 70}>
-              <div className="h-full rounded-2xl border border-line bg-surface p-7">
+              <div className="authority-card h-full border-t border-line bg-transparent pb-2 pt-7">
+                <p aria-hidden className="mb-5 font-serif text-sm text-gold/70">0{i + 1}</p>
                 <p className="font-serif text-lg font-medium">{item.title}</p>
                 <p className="mt-2 text-sm leading-relaxed text-muted">{item.body}</p>
               </div>
@@ -138,9 +140,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <Reveal>
           <div className="rounded-3xl bg-foreground px-8 py-16 text-background md:px-16 md:py-20">
             <h2 className="text-center font-serif text-3xl font-medium tracking-tight md:text-4xl">{c.how.title}</h2>
-            <div className="mt-14 grid grid-cols-1 gap-10 md:grid-cols-4">
+            <div className="mt-14 grid grid-cols-1 gap-10 md:grid-cols-4 md:divide-x md:divide-background/15">
               {c.how.steps.map((step, i) => (
-                <div key={step.title} className="relative text-center md:text-left">
+                <div key={step.title} className="relative text-center md:px-6 md:text-left first:md:pl-0 last:md:pr-0">
                   <p className="font-serif text-4xl text-gold-light">{i + 1}</p>
                   <p className="mt-3 text-sm font-medium">{step.title}</p>
                   <p className="mt-2 text-xs leading-relaxed opacity-60">{step.body}</p>
@@ -150,7 +152,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             <div className="mt-14 text-center">
               <Link
                 href="/order"
-                className="inline-block rounded-full bg-background px-10 py-4 text-sm font-medium text-foreground transition-opacity duration-200 hover:opacity-85"
+                className="premium-button inline-block rounded-full bg-background px-10 py-4 text-sm font-medium text-foreground hover:opacity-90"
               >
                 {c.hero.cta}
               </Link>
@@ -210,7 +212,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             <p className="mt-4 text-sm text-muted">{c.cta.body}</p>
             <Link
               href="/order"
-              className="mt-10 inline-block rounded-full bg-accent px-10 py-4 text-sm font-medium text-accent-foreground transition-colors duration-200 hover:bg-accent-hover"
+              className="premium-button mt-10 inline-block rounded-full bg-accent px-10 py-4 text-sm font-medium text-accent-foreground hover:bg-accent-hover"
             >
               {c.cta.button}
             </Link>
