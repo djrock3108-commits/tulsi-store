@@ -1,4 +1,5 @@
 import { setRequestLocale } from "next-intl/server";
+import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { getAstroContent } from "@/lib/astro-content";
 import Reveal from "@/components/Reveal";
@@ -20,6 +21,15 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   setRequestLocale(locale);
   const c = getAstroContent(locale as Locale);
+  const humanAnalysis = c.why.items[1];
+  const editorialCaption: Record<Locale, string> = {
+    en: "Editorial representation of the manual preparation process.",
+    es: "Representación editorial del proceso de elaboración manual.",
+    nl: "Redactionele weergave van het handmatige voorbereidingsproces.",
+    de: "Redaktionelle Darstellung des manuellen Ausarbeitungsprozesses.",
+    fr: "Représentation éditoriale du processus de préparation manuelle.",
+    it: "Rappresentazione editoriale del processo di preparazione manuale.",
+  };
 
   return (
     <>
@@ -71,6 +81,37 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </section>
 
       {/* ── Qué es la Astrología Védica ───────────────────────────── */}
+      <section aria-labelledby="human-work-title" className="mx-auto max-w-6xl px-6 pb-24 pt-8 md:pb-32 md:pt-16">
+        <Reveal>
+          <figure>
+            <div className="relative aspect-[3/2] overflow-hidden border border-line bg-surface">
+              <Image
+                src="/images/tulsi-scholar-editorial-v2.webp"
+                alt={editorialCaption[locale as Locale]}
+                fill
+                priority
+                sizes="(max-width: 768px) calc(100vw - 3rem), 1152px"
+                className="object-cover object-center"
+              />
+            </div>
+            <div className="grid gap-5 border-b border-line py-7 md:grid-cols-[1fr_1.25fr] md:items-start md:gap-16 md:py-9">
+              <div>
+                <p className="text-xs uppercase tracking-[0.3em] text-gold">{c.why.title}</p>
+                <h2 id="human-work-title" className="mt-4 font-serif text-2xl font-medium tracking-tight md:text-3xl">
+                  {humanAnalysis.title}
+                </h2>
+              </div>
+              <div>
+                <p className="max-w-xl text-sm leading-relaxed text-muted">{humanAnalysis.body}</p>
+                <figcaption className="mt-4 text-[11px] leading-relaxed text-muted/75">
+                  {editorialCaption[locale as Locale]}
+                </figcaption>
+              </div>
+            </div>
+          </figure>
+        </Reveal>
+      </section>
+
       <section id="what" className="manuscript-section border-y border-line bg-surface/70">
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-14 px-6 py-24 md:grid-cols-[1.08fr_0.92fr] md:gap-20 md:py-32">
           <Reveal>
