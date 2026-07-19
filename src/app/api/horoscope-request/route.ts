@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { getPrisma } from "@/lib/prisma";
 import { rateLimit, clientKey } from "@/lib/rate-limit";
-import { sendEmail } from "@/lib/email";
+import { sendEmail, notifyAdmin } from "@/lib/email";
 import { log } from "@/lib/log";
 import { LOCALES } from "@/i18n/routing";
 
@@ -53,23 +53,17 @@ export async function POST(req: Request) {
 
   await log("system", "info", `Nueva solicitud de horóscopo ${request.id} (${d.fullName}, ${d.country})`);
 
-  // Notificación al administrador (con todos los datos para preparar la carta)
-  await sendEmail(
-    ADMIN_EMAIL,
-    `🕉 Nueva solicitud de horóscopo — ${d.fullName}`,
-    `<div style="font-family:Georgia,serif;max-width:560px;margin:0 auto;padding:24px">
-      <h2>Nueva solicitud de Horóscopo Védico</h2>
-      <table cellpadding="6" style="font-size:14px">
-        <tr><td><b>Nombre</b></td><td>${d.fullName}</td></tr>
-        <tr><td><b>Email</b></td><td>${d.email}</td></tr>
-        <tr><td><b>Nacimiento</b></td><td>${d.birthDate} · ${d.timeUnknown ? "HORA DESCONOCIDA" : d.birthTime}</td></tr>
-        <tr><td><b>Lugar</b></td><td>${d.city}, ${d.country}</td></tr>
-        <tr><td><b>Idioma</b></td><td>${d.locale}</td></tr>
-        <tr><td><b>Comentarios</b></td><td>${d.comments || "—"}</td></tr>
-      </table>
-      <p>Siguiente paso: enviar el enlace PayPal desde <a href="https://tulsi.store/admin/requests">el panel</a>.</p>
-    </div>`,
-  );
+  // Notificación al administrador (llega a su Gmail; la dirección nunca sale
+  // del servidor). Vía Resend si está configurado; si no, relé FormSubmit.
+  await notifyAdmin(ADMIN_EMAIL, `🕉 Nueva solicitud de horóscopo — ${d.fullName}`, {
+    Nombre: d.fullName,
+    Email: d.email,
+    Nacimiento: `${d.birthDate} · ${d.timeUnknown ? "HORA DESCONOCIDA" : d.birthTime}`,
+    Lugar: `${d.city}, ${d.country}`,
+    Idioma: d.locale,
+    Comentarios: d.comments || "—",
+    Panel: "https://tulsi.store/admin/requests",
+  });
 
   // Confirmación al cliente (en su idioma; texto alineado con la página de gracias)
   const CONFIRM: Record<string, { subject: string; body: string }> = {

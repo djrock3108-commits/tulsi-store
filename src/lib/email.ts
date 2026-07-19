@@ -1,6 +1,37 @@
 import { log } from "./log";
 
 /**
+ * Aviso al administrador SIN cuenta de email transaccional: si Resend no está
+ * configurado, entrega vía FormSubmit (formsubmit.co) directo al Gmail del
+ * admin. El correo destino solo vive en el servidor — jamás llega al cliente.
+ * La primera entrega requiere un clic de activación en el Gmail del admin.
+ */
+export async function notifyAdmin(
+  adminEmail: string,
+  subject: string,
+  fields: Record<string, string>,
+): Promise<void> {
+  if (process.env.RESEND_API_KEY) {
+    const rows = Object.entries(fields)
+      .map(([k, v]) => `<tr><td style="padding:6px 12px 6px 0"><b>${k}</b></td><td>${v}</td></tr>`)
+      .join("");
+    await sendEmail(adminEmail, subject, `<table style="font-size:14px">${rows}</table>`);
+    return;
+  }
+  try {
+    const res = await fetch(`https://formsubmit.co/ajax/${adminEmail}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({ _subject: subject, _template: "table", ...fields }),
+    });
+    const ok = res.ok;
+    await log("system", ok ? "info" : "error", `Aviso admin vía FormSubmit: ${ok ? "enviado" : `HTTP ${res.status}`} — "${subject}"`);
+  } catch (e) {
+    await log("system", "error", `Aviso admin vía FormSubmit falló: ${e instanceof Error ? e.message : String(e)}`);
+  }
+}
+
+/**
  * Transactional email via the Resend HTTP API (no SDK dependency).
  * No-ops with a warning when RESEND_API_KEY is missing so the order
  * pipeline never fails because of email.
