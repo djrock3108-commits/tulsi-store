@@ -16,5 +16,14 @@
     "title": "Questa pagina si è persa.",
     "body": "La pagina che cerchi non esiste o è stata spostata.",
     "cta": "Torna alla home"
+  },
+  "contact": {
+    "title": "Contatti",
+    "subtitle": "Una domanda sulla tua lettura o sul tuo ordine? Scrivici — rispondiamo entro 24 ore.",
+    "message": "Il tuo messaggio",
+    "submit": "Invia messaggio",
+    "sending": "Invio…",
+    "ok": "Messaggio ricevuto. Rispondiamo entro 24 ore.",
+    "err": "Qualcosa è andato storto — riprova."
   }
 }

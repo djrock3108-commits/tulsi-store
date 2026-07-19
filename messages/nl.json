@@ -16,5 +16,14 @@
     "title": "Deze pagina is verdwaald.",
     "body": "De pagina die je zoekt bestaat niet of is verplaatst.",
     "cta": "Terug naar home"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Een vraag over je lezing of je bestelling? Schrijf ons — we antwoorden binnen 24 uur.",
+    "message": "Je bericht",
+    "submit": "Verstuur bericht",
+    "sending": "Versturen…",
+    "ok": "Bericht ontvangen. We antwoorden binnen 24 uur.",
+    "err": "Er ging iets mis — probeer opnieuw."
   }
 }

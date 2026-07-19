@@ -16,5 +16,14 @@
     "title": "Diese Seite hat sich verlaufen.",
     "body": "Die gesuchte Seite existiert nicht oder wurde verschoben.",
     "cta": "Zur Startseite"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Eine Frage zu deiner Deutung oder Bestellung? Schreib uns — wir antworten innerhalb von 24 Stunden.",
+    "message": "Deine Nachricht",
+    "submit": "Nachricht senden",
+    "sending": "Wird gesendet…",
+    "ok": "Nachricht erhalten. Wir antworten innerhalb von 24 Stunden.",
+    "err": "Etwas ging schief — bitte erneut versuchen."
   }
 }

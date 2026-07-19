@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entries.push(
       { url: `${SITE_URL}/${locale}`, changeFrequency: "weekly", priority: 1 },
       { url: `${SITE_URL}/${locale}/order`, changeFrequency: "weekly", priority: 0.9 },
+      { url: `${SITE_URL}/${locale}/contact`, changeFrequency: "yearly", priority: 0.4 },
     );
     for (const topic of LEGAL_TOPICS) {
       entries.push({ url: `${SITE_URL}/${locale}/legal/${topic}`, changeFrequency: "yearly", priority: 0.3 });

@@ -183,6 +183,17 @@ model HoroscopeRequest {
   @@index([email])
 }
 
+// Mensajes del formulario de contacto (además del relé al Gmail del admin,
+// quedan aquí como respaldo por si el email falla).
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  message   String
+  locale    String   @default("en")
+  createdAt DateTime @default(now())
+}
+
 // Suscriptores de newsletter (formulario de la home; RGPD: consentimiento
 // explícito registrado; doble opt-in se activará junto con Resend).
 model Subscriber {

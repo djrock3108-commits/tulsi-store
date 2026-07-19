@@ -22,9 +22,9 @@ export default function Footer() {
                 {l.label}
               </Link>
             ))}
-            <a href="mailto:hello@tulsi.store" className="transition-colors hover:text-foreground">
+            <Link href="/contact" className="transition-colors hover:text-foreground">
               {t("contact")}
-            </a>
+            </Link>
           </nav>
           <p className="text-xs text-muted">
             © {new Date().getFullYear()} Tulsi — {t("rights")}

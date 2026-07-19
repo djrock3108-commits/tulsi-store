@@ -16,5 +16,14 @@
     "title": "Cette page s est égarée.",
     "body": "La page que vous cherchez n existe pas ou a été déplacée.",
     "cta": "Retour à l accueil"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Une question sur votre lecture ou votre commande ? Écrivez-nous — réponse sous 24 heures.",
+    "message": "Votre message",
+    "submit": "Envoyer le message",
+    "sending": "Envoi…",
+    "ok": "Message reçu. Nous répondons sous 24 heures.",
+    "err": "Une erreur est survenue — réessayez."
   }
 }

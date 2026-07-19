@@ -16,5 +16,14 @@
     "title": "Esta página se perdió por el camino.",
     "body": "La página que buscas no existe o se ha movido.",
     "cta": "Volver al inicio"
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "¿Una pregunta sobre tu lectura o tu pedido? Escríbenos — respondemos en menos de 24 horas.",
+    "message": "Tu mensaje",
+    "submit": "Enviar mensaje",
+    "sending": "Enviando…",
+    "ok": "Mensaje recibido. Te respondemos en menos de 24 horas.",
+    "err": "Algo falló — inténtalo de nuevo."
   }
 }
