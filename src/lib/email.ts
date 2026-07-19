@@ -21,7 +21,13 @@ export async function notifyAdmin(
   try {
     const res = await fetch(`https://formsubmit.co/ajax/${adminEmail}`, {
       method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        // FormSubmit exige origen de web; sin esto responde 403
+        Origin: "https://tulsi.store",
+        Referer: "https://tulsi.store/order",
+      },
       body: JSON.stringify({ _subject: subject, _template: "table", ...fields }),
     });
     const ok = res.ok;
