@@ -18,23 +18,9 @@ export async function notifyAdmin(
     await sendEmail(adminEmail, subject, `<table style="font-size:14px">${rows}</table>`);
     return;
   }
-  try {
-    const res = await fetch(`https://formsubmit.co/ajax/${adminEmail}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        // FormSubmit exige origen de web; sin esto responde 403
-        Origin: "https://tulsi.store",
-        Referer: "https://tulsi.store/order",
-      },
-      body: JSON.stringify({ _subject: subject, _template: "table", ...fields }),
-    });
-    const ok = res.ok;
-    await log("system", ok ? "info" : "error", `Aviso admin vía FormSubmit: ${ok ? "enviado" : `HTTP ${res.status}`} — "${subject}"`);
-  } catch (e) {
-    await log("system", "error", `Aviso admin vía FormSubmit falló: ${e instanceof Error ? e.message : String(e)}`);
-  }
+  // Sin Resend, el aviso por email lo dispara el NAVEGADOR del visitante
+  // (lib/notify-client.ts, Web3Forms). Aquí solo dejamos constancia.
+  await log("system", "info", `Aviso admin delegado al navegador (Web3Forms) — "${subject}" · campos: ${Object.keys(fields).length}`);
 }
 
 /**

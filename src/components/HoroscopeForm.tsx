@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { notifyAdminFromBrowser } from "@/lib/notify-client";
 import type { AstroContent } from "@/lib/astro-content";
 
 const inputCls =
@@ -36,6 +37,17 @@ export default function HoroscopeForm({ t }: { t: AstroContent["form"] }) {
           consent: true,
         }),
       });
+      if (res.ok) {
+        notifyAdminFromBrowser(`🕉 Nueva solicitud de horóscopo — ${fd.get("fullName")}`, {
+          Nombre: String(fd.get("fullName") ?? ""),
+          Email: String(fd.get("email") ?? ""),
+          Nacimiento: `${fd.get("birthDate")} · ${timeUnknown ? "HORA DESCONOCIDA" : fd.get("birthTime")}`,
+          Lugar: `${fd.get("city")}, ${fd.get("country")}`,
+          Idioma: locale,
+          Comentarios: String(fd.get("comments") || "—"),
+          Panel: "https://tulsi.store/admin/requests",
+        });
+      }
       setState(res.ok ? "ok" : "err");
     } catch {
       setState("err");

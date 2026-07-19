@@ -18,7 +18,8 @@ function securityHeaders(res: NextResponse): NextResponse {
     "style-src 'self' 'unsafe-inline'",
     "img-src 'self' https: data: blob:",
     "font-src 'self' data:",
-    "connect-src 'self' https://api.stripe.com",
+    // api.web3forms.com: aviso de formularios al admin desde el navegador
+    "connect-src 'self' https://api.stripe.com https://api.web3forms.com",
     "frame-src https://js.stripe.com https://hooks.stripe.com",
     "base-uri 'self'",
     "form-action 'self'",
