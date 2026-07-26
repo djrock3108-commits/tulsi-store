@@ -3,6 +3,7 @@ import { setRequestLocale } from "next-intl/server";
 import { LEGAL, LEGAL_TOPICS, type LegalTopic } from "@/lib/legal-content";
 import { LOCALES, type Locale } from "@/i18n/routing";
 import type { Metadata } from "next";
+import { pageAlternates } from "@/lib/seo";
 
 export function generateStaticParams() {
   return LOCALES.flatMap((locale) => LEGAL_TOPICS.map((topic) => ({ locale, topic })));
@@ -17,7 +18,7 @@ export async function generateMetadata({
   const entry = LEGAL[topic as LegalTopic];
   if (!entry) return {};
   const doc = entry[locale as Locale] ?? entry.en;
-  return { title: doc.title };
+  return { title: doc.title, alternates: pageAlternates(locale, `/legal/${topic}`) };
 }
 
 export default async function LegalPage({

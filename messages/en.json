@@ -25,5 +25,8 @@
     "sending": "Sending…",
     "ok": "Message received. We will reply within 24 hours.",
     "err": "Something went wrong — please try again."
+  },
+  "price": {
+    "line": "Personal Vedic Horoscope · €60 — payment via secure PayPal link"
   }
 }

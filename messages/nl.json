@@ -25,5 +25,8 @@
     "sending": "Versturen…",
     "ok": "Bericht ontvangen. We antwoorden binnen 24 uur.",
     "err": "Er ging iets mis — probeer opnieuw."
+  },
+  "price": {
+    "line": "Persoonlijke Vedische horoscoop · €60 — betaling via veilige PayPal-link"
   }
 }

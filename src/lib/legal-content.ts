@@ -83,8 +83,8 @@ export const LEGAL: Record<LegalTopic, LegalEntry> = {
     en: {
       title: "Terms & Conditions",
       paragraphs: [
-        "Tulsi provides personalized Vedic astrology readings, prepared by hand by experienced Jyotish scholars. By submitting a request you accept these terms.",
-        "The process: you submit your birth details; we email you a PayPal payment link; once payment is confirmed, our scholars prepare your reading; you receive it as a PDF by email within 24 hours of payment.",
+        "Tulsi provides personalized Vedic astrology readings, individually prepared following the classical texts of the Jyotish tradition. By submitting a request you accept these terms.",
+        "The process: you submit your birth details; we email you a PayPal payment link; once payment is confirmed, your reading is prepared from your exact birth details; you receive it as a PDF by email within 24 hours of payment.",
         "Because every reading is a fully personalized service created specifically for you, the EU right of withdrawal no longer applies once preparation of your reading has begun with your consent. If you wish to cancel before payment or before work has started, simply write to hello@tulsi.store — nothing is owed.",
         "Important: a Vedic astrology reading offers traditional guidance and self-knowledge. It is not a substitute for professional medical, psychological, legal or financial advice, and no specific life outcome is guaranteed.",
         "These terms are governed by Dutch law. Nothing in them limits your statutory rights.",
@@ -93,8 +93,8 @@ export const LEGAL: Record<LegalTopic, LegalEntry> = {
     es: {
       title: "Términos y Condiciones",
       paragraphs: [
-        "Tulsi ofrece lecturas personalizadas de astrología védica, elaboradas a mano por eruditos experimentados del Jyotish. Al enviar una solicitud aceptas estas condiciones.",
-        "El proceso: envías tus datos de nacimiento; te mandamos por email un enlace de pago de PayPal; confirmado el pago, nuestros eruditos preparan tu lectura; la recibes en PDF por email en menos de 24 horas tras el pago.",
+        "Tulsi ofrece lecturas personalizadas de astrología védica, preparadas individualmente según los textos clásicos de la tradición Jyotish. Al enviar una solicitud aceptas estas condiciones.",
+        "El proceso: envías tus datos de nacimiento; te mandamos por email un enlace de pago de PayPal; confirmado el pago, tu lectura se prepara a partir de tus datos de nacimiento exactos; la recibes en PDF por email en menos de 24 horas tras el pago.",
         "Al ser cada lectura un servicio totalmente personalizado creado específicamente para ti, el derecho de desistimiento de la UE deja de aplicarse una vez comenzada su elaboración con tu consentimiento. Si deseas cancelar antes del pago o antes de que empiece el trabajo, escribe a hello@tulsi.store — no se debe nada.",
         "Importante: una lectura de astrología védica ofrece orientación tradicional y autoconocimiento. No sustituye el consejo profesional médico, psicológico, legal o financiero, y no se garantiza ningún resultado vital concreto.",
         "Estas condiciones se rigen por el derecho neerlandés. Nada en ellas limita tus derechos legales.",
@@ -103,8 +103,8 @@ export const LEGAL: Record<LegalTopic, LegalEntry> = {
     nl: {
       title: "Algemene Voorwaarden",
       paragraphs: [
-        "Tulsi levert persoonlijke Vedische astrologielezingen, met de hand opgesteld door ervaren Jyotish-geleerden. Door een aanvraag in te dienen accepteer je deze voorwaarden.",
-        "Het proces: je stuurt je geboortegegevens; wij mailen je een PayPal-betaallink; na betalingsbevestiging bereiden onze geleerden je lezing voor; je ontvangt haar als PDF per e-mail binnen 24 uur na betaling.",
+        "Tulsi levert persoonlijke Vedische astrologielezingen, individueel voorbereid volgens de klassieke teksten van de Jyotish-traditie. Door een aanvraag in te dienen accepteer je deze voorwaarden.",
+        "Het proces: je stuurt je geboortegegevens; wij mailen je een PayPal-betaallink; na betalingsbevestiging wordt je lezing opgesteld op basis van je exacte geboortegegevens; je ontvangt haar als PDF per e-mail binnen 24 uur na betaling.",
         "Omdat elke lezing een volledig gepersonaliseerde dienst is, vervalt het EU-herroepingsrecht zodra de voorbereiding met jouw instemming is begonnen. Wil je annuleren vóór betaling of vóór aanvang van het werk, mail dan hello@tulsi.store — je bent niets verschuldigd.",
         "Belangrijk: een Vedische lezing biedt traditionele begeleiding en zelfkennis. Zij vervangt geen professioneel medisch, psychologisch, juridisch of financieel advies, en er wordt geen specifieke levensuitkomst gegarandeerd.",
         "Op deze voorwaarden is Nederlands recht van toepassing.",
@@ -113,8 +113,8 @@ export const LEGAL: Record<LegalTopic, LegalEntry> = {
     de: {
       title: "Allgemeine Geschäftsbedingungen",
       paragraphs: [
-        "Tulsi bietet persönliche vedische Astrologie-Deutungen, von Hand erstellt von erfahrenen Jyotish-Gelehrten. Mit deiner Anfrage akzeptierst du diese Bedingungen.",
-        "Der Ablauf: du sendest deine Geburtsdaten; wir mailen dir einen PayPal-Zahlungslink; nach Zahlungsbestätigung erstellen unsere Gelehrten deine Deutung; du erhältst sie als PDF per E-Mail innerhalb von 24 Stunden nach Zahlung.",
+        "Tulsi bietet persönliche vedische Astrologie-Deutungen, individuell erstellt nach den klassischen Texten der Jyotish-Tradition. Mit deiner Anfrage akzeptierst du diese Bedingungen.",
+        "Der Ablauf: du sendest deine Geburtsdaten; wir mailen dir einen PayPal-Zahlungslink; nach Zahlungsbestätigung wird deine Deutung aus deinen exakten Geburtsdaten erstellt; du erhältst sie als PDF per E-Mail innerhalb von 24 Stunden nach Zahlung.",
         "Da jede Deutung eine vollständig personalisierte Leistung ist, erlischt das EU-Widerrufsrecht, sobald die Erstellung mit deiner Zustimmung begonnen hat. Möchtest du vor Zahlung oder Arbeitsbeginn stornieren, schreibe an hello@tulsi.store — es entstehen keine Kosten.",
         "Wichtig: Eine vedische Deutung bietet traditionelle Orientierung und Selbsterkenntnis. Sie ersetzt keine professionelle medizinische, psychologische, rechtliche oder finanzielle Beratung, und kein bestimmtes Lebensergebnis wird garantiert.",
         "Es gilt niederländisches Recht.",
@@ -123,8 +123,8 @@ export const LEGAL: Record<LegalTopic, LegalEntry> = {
     fr: {
       title: "Conditions Générales",
       paragraphs: [
-        "Tulsi propose des lectures personnalisées d'astrologie védique, réalisées à la main par des érudits expérimentés du Jyotish. En soumettant une demande, vous acceptez ces conditions.",
-        "Le processus : vous envoyez vos données de naissance ; nous vous adressons un lien de paiement PayPal ; une fois le paiement confirmé, nos érudits préparent votre lecture ; vous la recevez en PDF par e-mail sous 24 heures après paiement.",
+        "Tulsi propose des lectures personnalisées d'astrologie védique, préparées individuellement selon les textes classiques de la tradition Jyotish. En soumettant une demande, vous acceptez ces conditions.",
+        "Le processus : vous envoyez vos données de naissance ; nous vous adressons un lien de paiement PayPal ; une fois le paiement confirmé, votre lecture est préparée à partir de vos données de naissance exactes ; vous la recevez en PDF par e-mail sous 24 heures après paiement.",
         "Chaque lecture étant un service entièrement personnalisé, le droit de rétractation de l'UE cesse de s'appliquer dès que la préparation a commencé avec votre accord. Pour annuler avant paiement ou avant le début du travail, écrivez à hello@tulsi.store — rien n'est dû.",
         "Important : une lecture védique offre une orientation traditionnelle et une connaissance de soi. Elle ne remplace pas un avis professionnel médical, psychologique, juridique ou financier, et aucun résultat de vie spécifique n'est garanti.",
         "Ces conditions sont régies par le droit néerlandais.",
@@ -133,8 +133,8 @@ export const LEGAL: Record<LegalTopic, LegalEntry> = {
     it: {
       title: "Termini e Condizioni",
       paragraphs: [
-        "Tulsi offre letture personalizzate di astrologia vedica, elaborate a mano da eruditi esperti di Jyotish. Inviando una richiesta accetti questi termini.",
-        "Il processo: invii i tuoi dati di nascita; ti mandiamo via email un link di pagamento PayPal; confermato il pagamento, i nostri eruditi preparano la tua lettura; la ricevi in PDF via email entro 24 ore dal pagamento.",
+        "Tulsi offre letture personalizzate di astrologia vedica, preparate individualmente secondo i testi classici della tradizione Jyotish. Inviando una richiesta accetti questi termini.",
+        "Il processo: invii i tuoi dati di nascita; ti mandiamo via email un link di pagamento PayPal; confermato il pagamento, la tua lettura viene preparata dai tuoi dati di nascita esatti; la ricevi in PDF via email entro 24 ore dal pagamento.",
         "Essendo ogni lettura un servizio interamente personalizzato, il diritto di recesso UE cessa di applicarsi una volta iniziata la preparazione con il tuo consenso. Per annullare prima del pagamento o dell'inizio del lavoro, scrivi a hello@tulsi.store — nulla è dovuto.",
         "Importante: una lettura vedica offre orientamento tradizionale e conoscenza di sé. Non sostituisce il parere professionale medico, psicologico, legale o finanziario, e nessun esito di vita specifico è garantito.",
         "Si applica il diritto olandese.",

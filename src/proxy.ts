@@ -129,6 +129,14 @@ export default function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
   const maintenance = MAINTENANCE_MODE;
 
+  // Canonicalize www.tulsi.store -> tulsi.store (avoids duplicate-content indexing of both hosts).
+  const host = req.headers.get("host") ?? "";
+  if (host.startsWith("www.")) {
+    const canonicalUrl = new URL(req.nextUrl);
+    canonicalUrl.host = host.slice(4);
+    return NextResponse.redirect(canonicalUrl, 308);
+  }
+
   if (pathname.startsWith("/admin") || pathname.startsWith("/api/admin")) {
     const denied = adminGate(req);
     if (denied) return securityHeaders(denied);

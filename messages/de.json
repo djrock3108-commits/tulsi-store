@@ -25,5 +25,8 @@
     "sending": "Wird gesendet…",
     "ok": "Nachricht erhalten. Wir antworten innerhalb von 24 Stunden.",
     "err": "Etwas ging schief — bitte erneut versuchen."
+  },
+  "price": {
+    "line": "Persönliches vedisches Horoskop · 60 € — Zahlung per sicherem PayPal-Link"
   }
 }

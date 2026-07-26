@@ -25,5 +25,8 @@
     "sending": "Invio…",
     "ok": "Messaggio ricevuto. Rispondiamo entro 24 ore.",
     "err": "Qualcosa è andato storto — riprova."
+  },
+  "price": {
+    "line": "Oroscopo vedico personalizzato · 60 € — pagamento tramite link PayPal sicuro"
   }
 }

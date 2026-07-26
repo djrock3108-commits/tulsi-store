@@ -25,5 +25,8 @@
     "sending": "Enviando…",
     "ok": "Mensaje recibido. Te respondemos en menos de 24 horas.",
     "err": "Algo falló — inténtalo de nuevo."
+  },
+  "price": {
+    "line": "Horóscopo Védico Personalizado · 60 € — pago mediante enlace seguro de PayPal"
   }
 }

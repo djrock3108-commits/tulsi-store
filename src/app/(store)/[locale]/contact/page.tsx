@@ -3,6 +3,7 @@ import { getAstroContent } from "@/lib/astro-content";
 import ContactForm from "@/components/ContactForm";
 import type { Locale } from "@/i18n/routing";
 import type { Metadata } from "next";
+import { pageAlternates } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -11,7 +12,11 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "contact" });
-  return { title: t("title"), description: t("subtitle") };
+  return {
+    title: t("title"),
+    description: t("subtitle"),
+    alternates: pageAlternates(locale, "/contact"),
+  };
 }
 
 export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {
