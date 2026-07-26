@@ -1,20 +1,34 @@
 import type { MetadataRoute } from "next";
-import { LOCALES } from "@/i18n/routing";
+import { LOCALES, routing } from "@/i18n/routing";
 import { LEGAL_TOPICS } from "@/lib/legal-content";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://tulsi.store";
 
+type ChangeFrequency = NonNullable<MetadataRoute.Sitemap[number]["changeFrequency"]>;
+
+const PAGES: { path: string; changeFrequency: ChangeFrequency; priority: number }[] = [
+  { path: "", changeFrequency: "weekly", priority: 1 },
+  { path: "/order", changeFrequency: "weekly", priority: 0.9 },
+  { path: "/contact", changeFrequency: "yearly", priority: 0.4 },
+  ...LEGAL_TOPICS.map((topic) => ({
+    path: `/legal/${topic}`,
+    changeFrequency: "yearly" as const,
+    priority: 0.3,
+  })),
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const entries: MetadataRoute.Sitemap = [];
-  for (const locale of LOCALES) {
-    entries.push(
-      { url: `${SITE_URL}/${locale}`, changeFrequency: "weekly", priority: 1 },
-      { url: `${SITE_URL}/${locale}/order`, changeFrequency: "weekly", priority: 0.9 },
-      { url: `${SITE_URL}/${locale}/contact`, changeFrequency: "yearly", priority: 0.4 },
-    );
-    for (const topic of LEGAL_TOPICS) {
-      entries.push({ url: `${SITE_URL}/${locale}/legal/${topic}`, changeFrequency: "yearly", priority: 0.3 });
-    }
-  }
-  return entries;
+  return PAGES.flatMap((page) =>
+    LOCALES.map((locale) => ({
+      url: `${SITE_URL}/${locale}${page.path}`,
+      changeFrequency: page.changeFrequency,
+      priority: page.priority,
+      alternates: {
+        languages: {
+          ...Object.fromEntries(LOCALES.map((l) => [l, `${SITE_URL}/${l}${page.path}`])),
+          "x-default": `${SITE_URL}/${routing.defaultLocale}${page.path}`,
+        },
+      },
+    })),
+  );
 }
