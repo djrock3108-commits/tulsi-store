@@ -5,9 +5,11 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { routing, LOCALES } from "@/i18n/routing";
+import { routing, LOCALES, type Locale } from "@/i18n/routing";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
+import { organizationJsonLd, websiteJsonLd } from "@/lib/seo";
 import "../../globals.css";
 
 const geist = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
@@ -65,6 +67,8 @@ export default async function LocaleLayout({
     <html lang={locale} className={`${geist.variable} ${fraunces.variable} antialiased`}>
       <body className="flex min-h-screen flex-col">
         <NextIntlClientProvider>
+          <JsonLd data={organizationJsonLd(locale as Locale)} />
+          <JsonLd data={websiteJsonLd()} />
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />

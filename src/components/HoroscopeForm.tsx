@@ -7,7 +7,7 @@ import { notifyAdminFromBrowser } from "@/lib/notify-client";
 import type { AstroContent } from "@/lib/astro-content";
 
 const inputCls =
-  "w-full rounded-xl border border-line bg-surface px-4 py-3 text-sm outline-none transition-colors duration-200 focus:border-accent";
+  "w-full rounded-xl border border-line bg-surface px-4 py-3 text-base outline-none transition-colors duration-200 focus:border-accent";
 
 export default function HoroscopeForm({ t }: { t: AstroContent["form"] }) {
   const locale = useLocale();

@@ -3,6 +3,8 @@ import { Link } from "@/i18n/navigation";
 import { getAstroContent } from "@/lib/astro-content";
 import Reveal from "@/components/Reveal";
 import KundaliArt from "@/components/KundaliArt";
+import JsonLd from "@/components/JsonLd";
+import { serviceJsonLd } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
 
 /** Línea ornamental tradicional entre secciones — página de un libro antiguo. */
@@ -23,6 +25,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
   return (
     <>
+      <JsonLd data={serviceJsonLd(locale as Locale, c)} />
       {/* ── Hero ──────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden">
         {/* Carta védica gigante al 4% — se siente antes de verse */}

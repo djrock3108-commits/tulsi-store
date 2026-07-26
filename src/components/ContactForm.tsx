@@ -5,7 +5,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { notifyAdminFromBrowser } from "@/lib/notify-client";
 
 const inputCls =
-  "w-full rounded-xl border border-line bg-surface px-4 py-3 text-sm outline-none transition-colors duration-200 focus:border-accent";
+  "w-full rounded-xl border border-line bg-surface px-4 py-3 text-base outline-none transition-colors duration-200 focus:border-accent";
 
 export default function ContactForm({ nameLabel, emailLabel }: { nameLabel: string; emailLabel: string }) {
   const t = useTranslations("contact");
