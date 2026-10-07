@@ -9,7 +9,7 @@ import { routing, LOCALES, type Locale } from "@/i18n/routing";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
-import { organizationJsonLd, websiteJsonLd } from "@/lib/seo";
+import { organizationJsonLd, pageAlternates, websiteJsonLd } from "@/lib/seo";
 import "../../globals.css";
 
 const geist = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
@@ -39,10 +39,7 @@ export async function generateMetadata({
       "vedic astrology", "vedic horoscope", "jyotish", "birth chart", "natal chart",
       "vedic astrologer", "online horoscope", "vedic birth chart reading", "professional jyotish",
     ],
-    alternates: {
-      canonical: `/${locale}`,
-      languages: Object.fromEntries(LOCALES.map((l) => [l, `/${l}`])),
-    },
+    alternates: pageAlternates(locale, ""),
     openGraph: {
       type: "website",
       siteName: "Tulsi",
